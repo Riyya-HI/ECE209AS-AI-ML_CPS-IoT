@@ -1,7 +1,7 @@
 # ECE209AS-AI-ML_CPS-IoT
 Project for ECE 209-AS for Winter 2021
 
-#Team Members:
+## Team Members:
 Riyya Hari Iyer (Department of Electrical and Computer Engineering, UCLA 2021)
 
 Matthew Nicholas (Department of Electrical and Computer Engineering, UCLA 2021)
