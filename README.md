@@ -3,6 +3,7 @@ Project for ECE 209-AS for Winter 2021
 
 Authors:
 Riyya Hari Iyer (Department of Electrical and Computer Engineering, UCLA 2021)
+
 Matthew Nicholas (Department of Electrical and Computer Engineering, UCLA 2021)
 
 We are currently working on a project where we aim to implement object detection using microcontrollers. Broadly speaking, we aim to implement deep learning models such as RNNs and CNNs on memory-constrained devices like microcontroller (Arduino Nano specifically) and use them to facilitate object detection. Given below are some papers that we would refer to.
