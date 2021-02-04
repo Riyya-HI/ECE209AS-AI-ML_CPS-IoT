@@ -1,4 +1,6 @@
-# ECE209AS-AI-ML_CPS-IoT
+```diff
+# ECE209AS-AI-ML_CPS-IoT in red
+```
 Project for ECE 209-AS for Winter 2021
 
 ## Team Members:
