@@ -1,6 +1,6 @@
-# ECE209AS-AI-ML_CPS-IoT in red
+# ECE209AS-AI-ML_CPS-IoT 
 
-<p style='color:red'> Project for ECE 209-AS for Winter 2021 </p>
+<p style='color:black'> Project for ECE 209-AS for Winter 2021 </p>
 
 ## Team Members:
 Riyya Hari Iyer (Department of Electrical and Computer Engineering, UCLA 2021)
