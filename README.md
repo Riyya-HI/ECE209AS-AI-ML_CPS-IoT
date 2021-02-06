@@ -1,6 +1,6 @@
 # ECE209AS-AI-ML_CPS-IoT 
 
-## <p style='color:black'> Analysis of adaptive model streaming techniques on highly resource constrained devices for object detection </p>
+##  Analysis of adaptive model streaming techniques on highly resource constrained devices for object detection 
 
 ## Team Members:
 Riyya Hari Iyer (Department of Electrical and Computer Engineering, UCLA 2021)
