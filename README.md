@@ -24,7 +24,7 @@ jointly done by Matthew Nicholas and Riyya Hari Iyer. For our project website, p
 * [Demonstration](#demonstration)
 * [References](#references)
 
-## Introduction
+## Introduction 
 
 ## Project Proposal
 
