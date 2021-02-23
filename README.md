@@ -10,6 +10,7 @@ Matthew Nicholas (Department of Electrical and Computer Engineering, UCLA 2021)
 ## Project Website:
 This is the github repository for the project Analysis of adaptive model streaming techniques on highly resource constrained devices for object detection 
 jointly done by Matthew Nicholas and Riyya Hari Iyer. 
+
 For our project website, please visit: https://riyya-hi.github.io/ECE209AS-AI-ML_CPS-IoT/
 
 <a name="table"></a>
