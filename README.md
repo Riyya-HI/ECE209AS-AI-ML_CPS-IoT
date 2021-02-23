@@ -42,6 +42,8 @@ While this implementation showed the promise of the proposed system, the Samsung
 
 ### Heavy Model
 
+The Heavy Model is the model at the server side. Heavy as the term states pertains to the size of the model (memory). This is the model that would receive the real-time frames from the Lightweight model. Based on the frames it receives, it would train a copy of the lightweight model against that frame. This would lead difference in the values of some of the weights. This model would then send a compressed version of these specific weights (i.e. only those that require updation) to the lightweight model. It would incorporate those. 
+
 ### Lightweight Model
 
 ## Timeline for Project
