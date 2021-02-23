@@ -72,6 +72,19 @@ The idea is to have one main model (Heavy Model) at the server end that could he
 
 ## Technical Approach
 
+**EDGE side**
+
+Perform inference using lightweight model. //
+Sample frames to send to server //
+Update model with weights received from server //
+
+**Server Side**
+
+**Inference Phase:** server receives new sample frames, runs the teacher model on them to obtain the labels and adds the frames, labels, and frame timestamps to a training data buffer, Beta
+
+**Training Phase:** uses the labeled frames to train the “student” model that runs on the edge device.
+
+
 ### Heavy Model
 
 The Heavy Model is the model at the server side. Heavy as the term states pertains to the size of the model (memory). This is the model that would receive the real-time frames from the Lightweight model. Based on the frames it receives, it would train a copy of the lightweight model against that frame. This would lead difference in the values of some of the weights. This model would then send a compressed version of these specific weights (i.e. only those that require updation) to the lightweight model. It would incorporate those. 
