@@ -57,5 +57,7 @@ While this implementation showed the promise of the proposed system, the Samsung
 
 ## References
 [1] Khani, M., Hamadanian, P., Nasr-Esfahany, A. and Alizadeh, M., 2020. Real-Time Video Inference on Edge Devices via Adaptive Model Streaming. arXiv preprint arXiv:2006.06628.
+
 [2] https://pjreddie.com/darknet/yolo/
+
 [3] https://github.com/lyxok1/Tiny-DSOD
