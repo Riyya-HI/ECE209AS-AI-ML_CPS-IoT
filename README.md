@@ -19,8 +19,8 @@ jointly done by Matthew Nicholas and Riyya Hari Iyer. For our project website, p
 * [Technical Approach](#technical-approach)
 * [Timeline for the Project](#timeline-for-the-project)
 * [Results and Evaluations](#results-and-evaluations)
-* [Conclusion] (#conclusion)
-* [Future Work] (#future-work)
+* [Conclusion](#conclusion)
+* [Future Work](#future-work)
 * [Demonstration](#demonstration)
 * [References](#references)
 
