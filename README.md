@@ -12,14 +12,13 @@ Matthew Nicholas (Department of Electrical and Computer Engineering, UCLA 2021)
 * [Introduction](#introduction)
 * [Project Proposal](#project-proposal)
 * [Deliverables](#deliverables)
-* [Threat Model](#threat-model)
 * [Technical Approach](#technical-approach)
 * [Timeline for the Project](#timeline-for-the-project)
 * [Results and Evaluations](#results-and-evaluations)
-* [Limitations](#limitations)
+* [Conclusion] (#conclusion)
+* [Future Work] (#future-work)
 * [Demonstration](#demonstration)
 * [References](#references)
-* [Online Resources](#online-resources)
 
 ## Introduction
 
@@ -48,6 +47,8 @@ While this implementation showed the promise of the proposed system, the Samsung
 ## Conclusion
 
 ## Future Work
+
+## Demonstration
 
 
 ## References
