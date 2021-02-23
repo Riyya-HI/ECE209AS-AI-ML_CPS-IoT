@@ -15,7 +15,7 @@ jointly done by Matthew Nicholas and Riyya Hari Iyer. For our project website, p
 ## Table of Contents
 * [Introduction](#introduction)
 * [Project Proposal](#project-proposal)
-* [Motivation](#motivation)
+* [Motivation](#motivation) 
 * [Deliverables](#deliverables)
 * [Technical Approach](#technical-approach)
 * [Timeline for the Project](#timeline-for-the-project)
