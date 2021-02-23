@@ -23,7 +23,7 @@ jointly done by Matthew Nicholas and Riyya Hari Iyer. For our project website, p
 * [Conclusion](#conclusion)
 * [Future Work](#future-work)
 * [Demonstration](#demonstration)
-* [Mid-Term Presentation](#mid-term-presentation)
+* [Midterm Presentation](#midterm-presentation)
 * [Demonstration-2](#demonstration-2)
 * [References](#references)
 
