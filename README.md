@@ -141,6 +141,8 @@ This section would be updated soon
 
 The midterm presentation slides can be viewed here: 
 
+https://docs.google.com/presentation/d/1Ytl4gNqhI2qhu82NZwFP3tglB6PQfQGMbVwx3Wvj5gs/edit?usp=sharing
+
 ## Final Presentation
 
 This section would be updated soon
