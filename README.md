@@ -21,6 +21,7 @@ jointly done by Matthew Nicholas and Riyya Hari Iyer. For our project website, p
 * [Results and Evaluations](#results-and-evaluations)
 * [Conclusion](#conclusion)
 * [Future Work](#future-work)
+* [Midterm Presentation](#midterm-presentation)
 * [Demonstration](#demonstration)
 * [References](#references)
 
@@ -35,6 +36,8 @@ A well designed "lightweight" model is more likely to fit and run in real-time o
 In their paper, "Real-Time Video Inference on Edge Devices via Adaptive Model Streaming", Khani et al. propose a system which tweaks use of the two techniques above to achieve a high accuracy, low-latency, low bandwidth real-time video inference system on the edge. The key insight is to use online learning to continually adapt a lightweight model running on the edge device. The lightweight model Is continually retrained on a cloud server and the updated weights are sent to the edge. These researchers tested their proposal by implementing a video semantic segmentation system on the Samsung Galaxy S10 GPU (Adreno 640) and achieved 5.1-17.0 percent improvement when compared to a pre-trained model.
 
 While this implementation showed the promise of the proposed system, the Samsung Galaxy GPU contains significantly more compute and memory resources than a typical microcontroller. As a result, this project seeks to determine whether the proposed system would translate well to highly resource constrained devices. In particular, we seek to evaluate the performance of a of this proposed system when the lightweight model on the edge is far smaller and requires far less computations than the model deployed by the researchers (exact target size of model tbd). The performance of the system will be compared to a standard lightweight model, and improvement in the performance as a function of bandwitdth requirements will be determined and analyzed.
+
+## Motivation
 
 ## Deliverables
 
@@ -89,6 +92,10 @@ The Lightweight model sends frames of the environment every 10 seconds or so to 
 * Implement lightweight model on edge device such as raspberry pi
 * Implement gold standard and lightweight copy model on actual server
 * Compare simulated results with real example
+
+## Midterm Presentation
+
+## Final Presentation
 
 ## Demonstration
 
