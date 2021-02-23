@@ -67,7 +67,7 @@ The Lightweight Model is a model at the edge side (like a microcontroller, edge(
 
 The Lightweight model sends frames of the environment every 10 seconds or so to the Heavy model at the server side. Once the Heavy model receives these frames, it retrains a copy of the Lightweight model against it, updates specific weights and sends these specific weights to the Lightweight model. The Lightweight model upon receiving these weights incorporates that to facilitate a more accurate object detection. 
 
-## Timeline for Project
+## Timeline for Project **
 
 **Weeks 1-3:** Researching different ideas in the domain of Machine Learning for CPS Systems
 
@@ -85,9 +85,15 @@ The Lightweight model sends frames of the environment every 10 seconds or so to 
 
 **Week 10: Final Presentation**
 
+** Subject to change based on the developments in work
+
 ## Results and Evaluation
 
+This section would be updated soon
+
 ## Conclusion
+
+This section would be updated soon
 
 ## Future Work
 
@@ -97,9 +103,15 @@ The Lightweight model sends frames of the environment every 10 seconds or so to 
 
 ## Midterm Presentation
 
+The midterm presentation slides can be viewed here: 
+
 ## Final Presentation
 
+This section would be updated soon
+
 ## Demonstration
+
+This section would be updated soon
 
 
 ## References
