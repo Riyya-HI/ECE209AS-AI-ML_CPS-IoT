@@ -74,9 +74,7 @@ The idea is to have one main model (Heavy Model) at the server end that could he
 
 **EDGE side**
 
-Perform inference using lightweight model. //
-Sample frames to send to server //
-Update model with weights received from server //
+Perform inference using lightweight model. \ Sample frames to send to server \ Update model with weights received from server \
 
 **Server Side**
 
