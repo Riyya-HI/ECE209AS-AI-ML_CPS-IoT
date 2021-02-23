@@ -40,9 +40,13 @@ This can be taken care of by GPUs (General Processing Units) that can not only a
 
 MCUs or Microcontroller Units are ubiquitous systems that find application from military to healthcare and general-purpose systems. They're efficient and low-cost too. The disadvantage that sets back the implementtaion of object detection by means of MCUs is the limited memory available on-board for microcontrollers.
 
+<a href="#table">Back to Table of Contents</a>
+
 ## Related Work
 
 In their paper [1], "Real-Time Video Inference on Edge Devices via Adaptive Model Streaming", Khani et al. propose a system which tweaks use of the two techniques above to achieve a high accuracy, low-latency, low bandwidth real-time video inference system on the edge. The key insight is to use online learning to continually adapt a lightweight model running on the edge device. The lightweight model Is continually retrained on a cloud server and the updated weights are sent to the edge. These researchers tested their proposal by implementing a video semantic segmentation system on the Samsung Galaxy S10 GPU (Adreno 640) and achieved 5.1-17.0 percent improvement when compared to a pre-trained model.
+
+<a href="#table">Back to Table of Contents</a>
 
 ## Project Proposal
 
@@ -54,6 +58,8 @@ In their paper [1], "Real-Time Video Inference on Edge Devices via Adaptive Mode
 
 While this implementation showed the promise of the proposed system, the Samsung Galaxy GPU contains significantly more compute and memory resources than a typical microcontroller. As a result, this project seeks to determine whether the proposed system would translate well to highly resource constrained devices. In particular, we seek to evaluate the performance of a of this proposed system when the lightweight model on the edge is far smaller and requires far less computations than the model deployed by the researchers (exact target size of model tbd). The performance of the system will be compared to a standard lightweight model, and improvement in the performance as a function of bandwitdth requirements will be determined and analyzed.
 
+<a href="#table">Back to Table of Contents</a>
+
 ## Motivation
 
 Most efficient object detection models, i.e. the ones that have a high accuracy have a lot of parameters, and so they consume a lot of memory. These kind of models have their easiest deployment in servers or high-end PCs and Laptops, especially if they have a GPU and a graphics card. With MCUs having a memory in the order of a few kilobytes, it's near impossible to implement these at the edge level. Thus we need memory-optimized models.
@@ -61,6 +67,8 @@ Most efficient object detection models, i.e. the ones that have a high accuracy 
 One possible way to mitigate this problem is to just implement GPU-based systems everywhere for accurate object detection. But that would cost a ton of money for a single implementation itself. We could instead use MCUs to minimize the cost.
 
 The idea is to have one main model (Heavy Model) at the server end that could help update the edge level model (Lightweight model, possibly one at every location) to adapt to the current scenario to facilitate accurate object detection at a subsidized cost. This is exactly what we aim to do in this project.  
+
+<a href="#table">Back to Table of Contents</a>
 
 ## Deliverables
 
@@ -70,7 +78,18 @@ The idea is to have one main model (Heavy Model) at the server end that could he
 * Analysis of bandwidth accuracy tradeoffs
 * Memory footprint analysis
 
+<a href="#table">Back to Table of Contents</a>
+
 ## Technical Approach
+
+<p align="center">
+	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/Tech_Appr.jpg" width="480"/>
+	<br/>
+	<strong>The flow of frames and weights between the two models</strong>
+</p>
+
+
+<a href="#table">Back to Table of Contents</a>
 
 **EDGE side**
 
@@ -86,6 +105,8 @@ Update model with weights received from server
 
 **Training Phase:** uses the labeled frames to train the “student” model that runs on the edge device.
 
+<a href="#table">Back to Table of Contents</a>
+
 
 ### Heavy Model
 
@@ -97,11 +118,15 @@ It has a single neural network applied to the full image. This network divides t
 
 What makes the third version or V3 stand out is that it uses a few tricks to improve training and increase performance, including: multi-scale predictions, a better backbone classifier, and more as discussed in [4].
 
+<a href="#table">Back to Table of Contents</a>
+
 ### Lightweight Model
 
 The Lightweight Model is a model at the edge side (like a microcontroller, edge(end) device). Just like Heavy model, the term Lightweight pertains to the sizze of the model at the end device (edge). The reason why we implement a lightweight model is that out target devices are microcontrollers or MCUs. Even for a smartphone, the memory is constrained. Most machine learning  models, especially the deep learning ones, consume copious amounts of memory (in the order of GBs and even TBs). A smartphone itself cannot handle this memory capacity (let alone something as resource-constrained as an MCU). That's why it's important to optimize the memory at the edge side. This model has a very low capacity making it suitable for deployment at the edge side.
 
 The Lightweight model sends frames of the environment every 10 seconds or so to the Heavy model at the server side. Once the Heavy model receives these frames, it retrains a copy of the Lightweight model against it, updates specific weights and sends these specific weights to the Lightweight model. The Lightweight model upon receiving these weights incorporates that to facilitate a more accurate object detection. 
+
+<a href="#table">Back to Table of Contents</a>
 
 ## Timeline for Project **
 
@@ -123,13 +148,19 @@ The Lightweight model sends frames of the environment every 10 seconds or so to 
 
 **Subject to change based on the developments in work
 
+<a href="#table">Back to Table of Contents</a>
+
 ## Results and Evaluation
 
 This section would be updated soon
 
+<a href="#table">Back to Table of Contents</a>
+
 ## Conclusion
 
 This section would be updated soon
+
+<a href="#table">Back to Table of Contents</a>
 
 ## Future Work
 
@@ -137,19 +168,27 @@ This section would be updated soon
 * Implement gold standard and lightweight copy model on actual server
 * Compare simulated results with real example
 
+<a href="#table">Back to Table of Contents</a>
+
 ## Midterm Presentation
 
 The midterm presentation slides can be viewed here: 
 
 https://docs.google.com/presentation/d/1Ytl4gNqhI2qhu82NZwFP3tglB6PQfQGMbVwx3Wvj5gs/edit?usp=sharing
 
+<a href="#table">Back to Table of Contents</a>
+
 ## Final Presentation
 
 This section would be updated soon
 
+<a href="#table">Back to Table of Contents</a>
+
 ## Demonstration
 
 This section would be updated soon
+
+<a href="#table">Back to Table of Contents</a>
 
 
 ## References
