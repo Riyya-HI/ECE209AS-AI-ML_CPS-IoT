@@ -38,6 +38,12 @@ While this implementation showed the promise of the proposed system, the Samsung
 
 ## Deliverables
 
+* Working system simulated on cpu
+* Analysis of accuracy improvements
+* Analysis of bandwidth requirements
+* Analysis of bandwidth accuracy tradeoffs
+* Memory footprint analysis
+
 ## Technical Approach
 
 ### Heavy Model
@@ -79,6 +85,10 @@ The Lightweight model sends frames of the environment every 10 seconds or so to 
 ## Conclusion
 
 ## Future Work
+
+* Implement lightweight model on edge device such as raspberry pi
+* Implement gold standard and lightweight copy model on actual server
+* Compare simulated results with real example
 
 ## Demonstration
 
