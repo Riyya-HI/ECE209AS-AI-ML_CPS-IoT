@@ -48,19 +48,19 @@ The Heavy Model is the model at the server side. Heavy as the term states pertai
 
 ## Timeline for Project
 
-Weeks 1-3: Researching different ideas in the domain of Machine Learning for CPS Systems
+**Weeks 1-3:** Researching different ideas in the domain of Machine Learning for CPS Systems
 
-Week 4: Discussion on projects, especially the one on adaptive model streaming techniques for object detection
+**Week 4:** Discussion on projects, especially the one on adaptive model streaming techniques for object detection
 
-Week 5: Finalizing the project **Analysis of adaptive model streaming techniques on highly resource constrained devices for object detection**
+**Week 5:** Finalizing the project **Analysis of adaptive model streaming techniques on highly resource constrained devices for object detection**
 
-Weeks 6-7: Surveying different models (both Heavy as well as Lightweight) for object detection and finalising them
+**Weeks 6-7:** Surveying different models (both Heavy as well as Lightweight) for object detection and finalising them
 
 **Future Plan**
 
 **Week 8: Mid-term Presentation**
 
-Weeks 8-10: Enabling transmission and reception of real-time frames, transmission of specific weights, entire system integration
+**Weeks 8-10:** Enabling transmission and reception of real-time frames, transmission of specific weights, entire system integration
 
 **Week 10: Final Presentation**
 
