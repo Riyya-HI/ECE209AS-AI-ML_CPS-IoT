@@ -85,7 +85,7 @@ The Lightweight model sends frames of the environment every 10 seconds or so to 
 
 **Week 10: Final Presentation**
 
-** Subject to change based on the developments in work
+**** Subject to change based on the developments in work
 
 ## Results and Evaluation
 
