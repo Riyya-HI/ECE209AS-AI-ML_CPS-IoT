@@ -96,8 +96,6 @@ Update model with weights received from server
 
 **Training Phase:** uses the labeled frames to train the “student” model that runs on the edge device.
 
-<a href="#table">Back to Table of Contents</a>
-
 
 ### Heavy Model
 
