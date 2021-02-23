@@ -82,15 +82,6 @@ The idea is to have one main model (Heavy Model) at the server end that could he
 
 ## Technical Approach
 
-<p align="center">
-	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/Tech_Appr.jpg" width="480"/>
-	<br/>
-	<strong>The flow of frames and weights between the two models</strong>
-</p>
-
-
-<a href="#table">Back to Table of Contents</a>
-
 **EDGE side**
 
 Perform inference using lightweight model&nbsp;
