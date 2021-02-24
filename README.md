@@ -188,3 +188,5 @@ This section would be updated soon
 [3] https://github.com/lyxok1/Tiny-DSOD
 
 [4] Redmon, J., & Farhadi, A. (2018). Yolov3: An incremental improvement. arXiv preprint arXiv:1804.02767. 
+
+<a href="#table">Back to Table of Contents</a>
