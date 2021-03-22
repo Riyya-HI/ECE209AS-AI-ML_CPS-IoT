@@ -162,6 +162,16 @@ Thus, our final choices are:
 
 <a href="#table">Back to Table of Contents</a>
 
+## Implementation
+
+### Heavy Model
+
+### Lightweight Model
+
+Follow this for generating files for training [5]: https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
+Follow this for generating files for training MobileNet [6]: https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi
+Follow this for implementing a pre-trained model [7]: https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/Raspberry_Pi_Guide.md
+
 ## Timeline for Project **
 
 **Weeks 1-3:** Researching different ideas in the domain of Machine Learning for CPS Systems
@@ -245,5 +255,11 @@ This section would be updated soon
 [3] https://github.com/lyxok1/Tiny-DSOD
 
 [4] Redmon, J., & Farhadi, A. (2018). Yolov3: An incremental improvement. arXiv preprint arXiv:1804.02767. 
+
+[5] https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
+
+[6] https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi
+
+[7] https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/Raspberry_Pi_Guide.md
 
 <a href="#table">Back to Table of Contents</a>
