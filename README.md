@@ -169,8 +169,12 @@ Thus, our final choices are:
 ### Lightweight Model
 
 Follow this for generating files for training [5]: https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
+
 Follow this for generating files for training MobileNet [6]: https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi
+
 Follow this for implementing a pre-trained model [7]: https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/Raspberry_Pi_Guide.md
+
+It's important to follow the steps properly in these tutorials, yet there may be some sources of error. For that, you may refer to the document --aa in the github. It has the steps as well as some Notes, Possible sources of error and the ways to mitigate them. The possible sources of error and the ways to mitigate them have always been given below.
 
 ## Timeline for Project **
 
