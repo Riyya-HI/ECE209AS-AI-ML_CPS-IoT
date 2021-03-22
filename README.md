@@ -145,6 +145,12 @@ The Lightweight model sends frames of the environment every 10 seconds or so to 
 
 <a href="#table">Back to Table of Contents</a>
 
+## Literature Survey
+
+### Heavy Model
+
+### Lightweight Model
+
 ## Results and Evaluation
 
 This section would be updated soon
