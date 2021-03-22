@@ -136,7 +136,7 @@ The Lightweight model sends frames of the environment every 10 seconds or so to 
 |  2.   | YOLO vPP            | 27 MB      | Servers, laptops, PCs | COCO     | Latest addition in the YOLO universe     	|
 
 
-We decided to go ahead with YOLO v4 as it renders the same accuracy as YOLO v3 at a smaller. We couldn't have gone ahead with YOLO vPP as that was release long after work had started. But this can be a future implementation.
+We decided to go ahead with YOLO v4 as it renders the same accuracy as YOLO v3 at a smaller size. We couldn't have gone ahead with YOLO vPP as that was release long after work had started. But this can be a future implementation.
 
 
 
