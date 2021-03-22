@@ -21,6 +21,7 @@ For our project website, please visit: https://riyya-hi.github.io/ECE209AS-AI-ML
 * [Motivation](#motivation)
 * [Deliverables](#deliverables)
 * [Technical Approach](#technical-approach)
+* [Literature Survey](#literature-survey)
 * [Timeline for the Project](#timeline-for-the-project)
 * [Results and Evaluations](#results-and-evaluations)
 * [Conclusion](#conclusion)
@@ -117,33 +118,12 @@ What makes the third version or V3 stand out is that it uses a few tricks to imp
 
 ### Lightweight Model
 
-The Lightweight Model is a model at the edge side (like a microcontroller, edge(end) device). Just like Heavy model, the term Lightweight pertains to the sizze of the model at the end device (edge). The reason why we implement a lightweight model is that out target devices are microcontrollers or MCUs. Even for a smartphone, the memory is constrained. Most machine learning  models, especially the deep learning ones, consume copious amounts of memory (in the order of GBs and even TBs). A smartphone itself cannot handle this memory capacity (let alone something as resource-constrained as an MCU). That's why it's important to optimize the memory at the edge side. This model has a very low capacity making it suitable for deployment at the edge side.
+The Lightweight Model is a model at the edge side (like a microcontroller, edge(end) device). Just like Heavy model, the term Lightweight pertains to the size of the model at the end device (edge). The reason why we implement a lightweight model is that out target devices are microcontrollers or MCUs. Even for a smartphone, the memory is constrained. Most machine learning  models, especially the deep learning ones, consume copious amounts of memory (in the order of GBs and even TBs). A smartphone itself cannot handle this memory capacity (let alone something as resource-constrained as an MCU). That's why it's important to optimize the memory at the edge side. This model has a very low capacity making it suitable for deployment at the edge side.
 
 The Lightweight model sends frames of the environment every 10 seconds or so to the Heavy model at the server side. Once the Heavy model receives these frames, it retrains a copy of the Lightweight model against it, updates specific weights and sends these specific weights to the Lightweight model. The Lightweight model upon receiving these weights incorporates that to facilitate a more accurate object detection. 
 
 <a href="#table">Back to Table of Contents</a>
 
-## Timeline for Project **
-
-**Weeks 1-3:** Researching different ideas in the domain of Machine Learning for CPS Systems
-
-**Week 4:** Discussion on projects, especially the one on adaptive model streaming techniques for object detection
-
-**Week 5:** Finalizing the project **Analysis of adaptive model streaming techniques on highly resource constrained devices for object detection**
-
-**Weeks 6-7:** Surveying different models (both Heavy as well as Lightweight) for object detection and finalising them
-
-**Future Plan**
-
-**Week 8: Mid-term Presentation**
-
-**Weeks 8-10:** Enabling transmission and reception of real-time frames, transmission of specific weights, entire system integration
-
-**Week 10: Final Presentation**
-
-**Subject to change based on the developments in work
-
-<a href="#table">Back to Table of Contents</a>
 
 ## Literature Survey
 
@@ -174,7 +154,33 @@ NOTE: It's true that YOLO v4 can be implemented on Raspberry Pi, but it won't ru
 Thus, our final choices are:
 
 **Heavy Model: YOLO v4**
+
 **Lightweight Model: MobileNet**
+
+<a href="#table">Back to Table of Contents</a>
+
+## Timeline for Project **
+
+**Weeks 1-3:** Researching different ideas in the domain of Machine Learning for CPS Systems
+
+**Week 4:** Discussion on projects, especially the one on adaptive model streaming techniques for object detection
+
+**Week 5:** Finalizing the project **Analysis of adaptive model streaming techniques on highly resource constrained devices for object detection**
+
+**Weeks 6-7:** Surveying different models (both Heavy as well as Lightweight) for object detection and finalising them
+
+**Future Plan**
+
+**Week 8: Mid-term Presentation**
+
+**Weeks 8-10:** Enabling transmission and reception of real-time frames, transmission of specific weights, entire system integration
+
+**Week 10: Final Presentation**
+
+**Subject to change based on the developments in work
+
+<a href="#table">Back to Table of Contents</a>
+
 
 ## Results and Evaluation
 
