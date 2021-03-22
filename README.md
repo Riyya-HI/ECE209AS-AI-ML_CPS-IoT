@@ -24,6 +24,7 @@ For our project website, please visit: https://riyya-hi.github.io/ECE209AS-AI-ML
 * [Literature Survey](#literature-survey)
 * [Timeline for the Project](#timeline-for-the-project)
 * [Results and Evaluations](#results-and-evaluations)
+* [Limitations](#limitations)
 * [Conclusion](#conclusion)
 * [Future Work](#future-work)
 * [Midterm Presentation](#midterm-presentation)
@@ -190,6 +191,14 @@ This section would be updated soon
 
 <a href="#table">Back to Table of Contents</a>
 
+## Limitations
+
+* MobileNet takes a very long time to train (~8 hours)
+* Currently this project only evaluates how a heavy model improves a lightweight model, all at the same end
+* With our specific aim, time constraint and the availability of models, implementation on Arduino is difficult
+
+<a href="#table">Back to Table of Contents</a>
+
 ## Conclusion
 
 This section would be updated soon
@@ -198,9 +207,12 @@ This section would be updated soon
 
 ## Future Work
 
-* Implement lightweight model on edge device such as raspberry pi
+* Actually implement lightweight model on edge device such as raspberry pi
 * Implement gold standard and lightweight copy model on actual server
 * Compare simulated results with real example
+* Use a smaller model on Raspberry Pi, something that may even train faster
+* Implement an IP stack to transfer weights and frames
+* Implement YOLO vPP on the server side
 
 <a href="#table">Back to Table of Contents</a>
 
