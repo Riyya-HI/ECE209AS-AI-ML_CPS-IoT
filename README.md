@@ -31,6 +31,7 @@ For our project website, please visit: https://riyya-hi.github.io/ECE209AS-AI-ML
 * [Final Presentation](#final-presentation)
 * [Demonstration](#demonstration)
 * [References](#references)
+* [Common Errors and Fixes](#common-errors-and-fixes)
 
 ## Introduction 
 
@@ -265,5 +266,38 @@ This section would be updated soon
 [6] https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi
 
 [7] https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/Raspberry_Pi_Guide.md
+
+<a href="#table">Back to Table of Contents</a>
+
+## Common Errors and Fixes
+
+**1.	ImportError: cannot import name 'fpn_pb2' from 'object_detection.protos' (C:\tensorflow_model\models\research\object_detection\protos\__init__.py)**
+
+Go to the research folder and type:
+protoc --python_out=. .\object_detection\protos\fpn.proto
+
+Then go back to the object_detection folder and start the training
+
+**2.	ModuleNotFoundError: No module named 'yaml'**
+
+python -m pip install pyyaml
+
+**3.	ModuleNotFoundError: No module named 'gin'**
+
+pip install gin-config==0.1.1
+
+**4.	ModuleNotFoundError: No module named 'tensorflow_addons'**
+
+pip install tensorflow-addons~=0.12.0
+
+**5.	tensorflow.python.framework.errors_impl.InvalidArgumentError: Unsuccessful TensorSliceReader constructor: Failed to get matching files on C:/tensorflow_model/models/research/object_detection/ ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03/model.ckpt: Not found: FindFirstFile failed for: C:/tensorflow_model/models/research/object_detection/ ssd_mobilenet_v2_quantized_300x300_coco_2019_01_03 : The system cannot find the path specified.; No such process**
+
+Refer to point 2 of notes section
+
+**6.	ImportError: cannot import name 'center_net_pb2' from 'object_detection.protos' (C:\tensorflow_model\models\research\object_detection\protos\__init__.py)**
+
+Go to the research folder and type:
+protoc --python_out=. .\object_detection\protos\input_reader.proto
+protoc --python_out=. .\object_detection\protos\center_net.proto
 
 <a href="#table">Back to Table of Contents</a>
