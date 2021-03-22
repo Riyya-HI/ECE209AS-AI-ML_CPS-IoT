@@ -149,20 +149,32 @@ The Lightweight model sends frames of the environment every 10 seconds or so to 
 
 ### Heavy Model
 
-| S.No  | Model Name          | URL | Model Size | Site of deployment    | Datasets | Limitations ---------------------------         |
-| ----- | ----------          | --- | ---------- | ------------------    | -------- | ---------------------------------------         |
-|  1.   | Tiny DSOD           | -   | 2.3 MB     | Raspberry Pi          | COCO     | Has complex cmake and caffe dependencies
-|  2.   | SSD MobileNet       |  -  | 27 MB      | Raspberry Pi          | COCO     | Long training time of ~ 3-8 hours      	      |
-|  3.   | Tiny ML - Person ID |  -  | ~ KBs      | Raspberry Pi, Arduino | Person   | Limits the type of objects that can be detected |
+| S.No  | Model Name          | URL | Model Size | Site of deployment    | Datasets | Advantages         
+| ----- | ----------          | --- | ---------- | ------------------    | -------- | ------------------------------------------------|
+|  1.   | YOLO v3             | -   | 2.3 MB     | Servers, laptops, PCs | COCO     | State-of-the-Art model for object detection     |
+|  2.   | YOLO v4             |  -  | 27 MB      | Servers, laptops, PCs | COCO     | Smaller than YOLO v3, same accuracy   	      |
+|  2.   | YOLO vPP            |  -  | 27 MB      | Servers, laptops, PCs | COCO     | Latest addition in the YOLO universe     	      |
+
+We decided to go ahead with YOLO v4 as it renders the same accuracy as YOLO v3 at a smaller. We couldn't have gone ahead with YOLO vPP as that was release long after work had started. But this can be a future implementation.
+
 
 
 ### Lightweight Model
 
-| S.No  | Model Name          | URL | Model Size | Site of deployment    | Datasets | Limitations ---------------------------         |
-| ----- | ----------          | --- | ---------- | ------------------    | -------- | ---------------------------------------         |
-|  1.   | Tiny DSOD           | -   | 2.3 MB     | Raspberry Pi          | COCO     | Has complex cmake and caffe dependencies
+| S.No  | Model Name          | URL | Model Size | Site of deployment    | Datasets | Limitations         
+| ----- | ----------          | --- | ---------- | ------------------    | -------- | ------------------------------------------------|
+|  1.   | Tiny DSOD           | -   | 2.3 MB     | Raspberry Pi          | COCO     | Has complex cmake and caffe dependencies        |
 |  2.   | SSD MobileNet       |  -  | 27 MB      | Raspberry Pi          | COCO     | Long training time of ~ 3-8 hours      	      |
 |  3.   | Tiny ML - Person ID |  -  | ~ KBs      | Raspberry Pi, Arduino | Person   | Limits the type of objects that can be detected |
+
+While Tiny-DSOD is a smaller model, the CMake and Caffe dependencies are a little difficult in installation as compared to tensorflow, which also has more internet support available. Do we decided to go ahead with SSD Mobilenet. The Tiny ML - Person detection model also has ample support available. It can also be implemented on Arduino, a cheaper and an even more resource-constrained platform. But then that would just limit the detection to persons. We aim for something more generalizable. Hence we decided to move ahead with MobileNet.
+
+NOTE: It's true that YOLO v4 can be implemented on Raspberry Pi, but it won't run as quickly as accurately as it would run on servers. A lighter model would work better on a resource like Raspberry Pi which is constrained in comparison to laptopa, PCs, servers and GPUs.
+
+Thus, our final choices are:
+
+**Heavy Model: YOLO v4**
+**Lightweight Model: MobileNet**
 
 ## Results and Evaluation
 
