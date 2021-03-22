@@ -149,7 +149,20 @@ The Lightweight model sends frames of the environment every 10 seconds or so to 
 
 ### Heavy Model
 
+| S.No  | Model Name          | URL | Model Size | Site of deployment    | Datasets | Limitations ---------------------------         |
+| ----- | ----------          | --- | ---------- | ------------------    | -------- | ---------------------------------------         |
+|  1.   | Tiny DSOD           | -   | 2.3 MB     | Raspberry Pi          | COCO     | Has complex cmake and caffe dependencies
+|  2.   | SSD MobileNet       |  -  | 27 MB      | Raspberry Pi          | COCO     | Long training time of ~ 3-8 hours      	      |
+|  3.   | Tiny ML - Person ID |  -  | ~ KBs      | Raspberry Pi, Arduino | Person   | Limits the type of objects that can be detected |
+
+
 ### Lightweight Model
+
+| S.No  | Model Name          | URL | Model Size | Site of deployment    | Datasets | Limitations ---------------------------         |
+| ----- | ----------          | --- | ---------- | ------------------    | -------- | ---------------------------------------         |
+|  1.   | Tiny DSOD           | -   | 2.3 MB     | Raspberry Pi          | COCO     | Has complex cmake and caffe dependencies
+|  2.   | SSD MobileNet       |  -  | 27 MB      | Raspberry Pi          | COCO     | Long training time of ~ 3-8 hours      	      |
+|  3.   | Tiny ML - Person ID |  -  | ~ KBs      | Raspberry Pi, Arduino | Person   | Limits the type of objects that can be detected |
 
 ## Results and Evaluation
 
