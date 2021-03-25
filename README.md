@@ -177,6 +177,23 @@ Follow this for implementing a pre-trained model [7]: https://github.com/EdjeEle
 
 It's important to follow the steps properly in these tutorials, yet there may be some sources of error. For that, you may refer to the document Training_Instructions in the github. It has the steps as well as some Notes, Possible sources of error and the ways to mitigate them. The possible sources of error and the ways to mitigate them have always been given below.
 
+### Integration
+
+#### Splitting videos to frames
+
+To analyze the lightweight model's (before and after) performance, we split the videos into frames before testing it out. We used the code adapted from . Video was further split into different segments using .
+
+**Working**
+
+1. Split the video into segments of 10 seconds each (this can vary as per your needs).
+2. Split each video into frames at 30 FPS (basically a high FPS).
+3. Test the lightweight model's performance on a frame from 0-10 seconds. This is your baseline performance.
+4. Test the heavy model's performance on the same frame from 0-10 seconds. This is your ground truth.
+5. Retrain the lightweight model based on the new ground truth generated from the heavy model.
+6. Test the lightweight model's performance on a frame from 10-20 seconds after it gets retrained. This is your improved performance.
+7. This new performance then becomes your new baseline and a frame from the next segment, i.e. 20-30 seconds becomes your next test image.
+8. Repeat steps 3-7 for a few contiguous video segments.
+
 ## Timeline for Project **
 
 **Weeks 1-3:** Researching different ideas in the domain of Machine Learning for CPS Systems
