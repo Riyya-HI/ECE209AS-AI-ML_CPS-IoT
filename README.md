@@ -181,7 +181,7 @@ It's important to follow the steps properly in these tutorials, yet there may be
 
 #### Splitting videos to frames
 
-To analyze the lightweight model's (before and after) performance, we split the videos into frames before testing it out. We used the code adapted from . Video was further split into different segments using .
+To analyze the lightweight model's (before and after) performance, we shot videos on our own. We then split the videos into frames before testing it out. Video was further split into different segments using kapwing, a free open-source video-editor[9]. Then we used the code Video_To_Frames.ipynb given in this repo which has been adapted from stack overflow[8] for each segment. 
 
 **Working**
 
@@ -283,6 +283,10 @@ This section would be updated soon
 [6] https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi
 
 [7] https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/Raspberry_Pi_Guide.md
+
+[8] https://stackoverflow.com/questions/33311153/python-extracting-and-saving-video-frames
+
+[9] https://www.kapwing.com/
 
 <a href="#table">Back to Table of Contents</a>
 
