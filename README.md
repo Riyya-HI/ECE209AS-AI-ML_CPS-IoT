@@ -35,6 +35,8 @@ For our project website, please visit: https://riyya-hi.github.io/ECE209AS-AI-ML
 
 ## Introduction 
 
+State-of-the-art neural networks can now achieve high accuracy in a broad spectrum of areas such as computer vision, speech analysis, language processing, and mobile sensing. However, high execution times and energy consumption remain major barriers to large-scale deployment of deep learning services on lower-end embedded and/or mobile sensing devices. Despite progress in compressing neural networks for reducing resource demands, the computational requirements of many deep learning models remain prohibitive for low end device deployment.
+<!---
 Deep Learning is becoming a ubiquitous field these days. It has wide range of applications, ranging from image classification to speech and language analysis. One such application is in the field of object detection.
 
 Object Detection as the name states is a technique of using neural networks (that form the backbone of Deep Learning) to analyze and classify objects either in image frames or real-time streaming videos. These require one of the more complex implementations of neural networks to achieve a high accuracy, resulting in their models require a lot of memory. Models such are YOLO (You Only Look Once) are becoming increasingly popular these days.
@@ -42,6 +44,7 @@ Object Detection as the name states is a technique of using neural networks (tha
 This can be taken care of by GPUs (General Processing Units) that can not only accomodate such models' memory requirements but also speed up their operations by means of a graphics card. Problems arise at the hardware side of things, in particular, the cost. GPUs are very expensive. Since object detection can be required anywhere and everywhere, it's impractical, not to mention cost-intensiev to have GPU systems everywhere.
 
 MCUs or Microcontroller Units are ubiquitous systems that find application from military to healthcare and general-purpose systems. They're efficient and low-cost too. The disadvantage that sets back the implementtaion of object detection by means of MCUs is the limited memory available on-board for microcontrollers.
+-->
 
 <a href="#table">Back to Table of Contents</a>
 
