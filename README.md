@@ -35,7 +35,20 @@ For our project website, please visit: https://riyya-hi.github.io/ECE209AS-AI-ML
 
 ## Introduction 
 
-State-of-the-art neural networks can now achieve high accuracy in a broad spectrum of areas such as computer vision, speech analysis, language processing, and mobile sensing. However, high execution times and energy consumption remain major barriers to large-scale deployment of deep learning services on lower-end embedded and/or mobile sensing devices. Despite progress in compressing neural networks for reducing resource demands, the computational requirements of many deep learning models remain prohibitive for low end device deployment.
+State-of-the-art deep neural networks (DNNs) can now achieve high accuracy in a broad spectrum of areas such as computer vision, speech analysis, language processing, and mobile sensing. However, high execution times and energy consumption remain major barriers to large-scale deployment of deep learning services on lower-end embedded and/or mobile sensing devices.
+
+Object detection and classification is a deep learning task that detects objects within an image or video frame, draws a bounding box around each detected object, and classifies each object as a particular class. The object detection and classification task is one such task that follows the pattern mentioned above. Great strides have been made in improving accuracy and performance for this task, but it remains largely infeasible to use such state-of-the-art networks on the edge. Usually, highly parrallel computing hardware such as GPUs, TPUs, or neural network accelerators are required to perform this task in real time (typically around 30fps) on video input. This hardware is far too expensive to be included on a large scale within edge devices.
+
+In order to perform the object detections and classification task on edge devices, it is common to either (1) use a specialized "lightweight" model or (2) offload compute to a remote server. 
+
+A well designed "lightweight" model is more likely to fit and run in real-time on a resource-constrained device. These models reduce the memory footprint, power consumption, and inference time when compared to typical solutions. Unfortunately, these models often suffer from a significant reduction in accuracy when compared to more complex models. On the other end, using a remote server to offload computation results in excellent accuracy and reduces the the workload on mobile/edge devices. However, offloading the video frames incurs significant delay on inference time. It is infeasible to tolerate this delay in many real-time systems. Furthermore, sending video frames with a reasonable resolution over a communication link requires ample network bandwidth that may be expensive or unavailable. 
+
+<!---
+There are two common solutions that are used to improve the feasibility and performance of object detection systems at the edge. First, lightweight object detection models such as tiny-yolo and ssd-mobbilenetV2 (cite both of these) have been created. These models reduce the memory footprint, power consumption, and inference time when compared to typical solutions. However, the downside is that these lightweight models often perform significantly worse than the larger, more computationaly expensive models, resulting in a drop in accuracy (maybe cite something here). A second solution is to offload incoming video frames to a more computationally capable node, such as a server. In this solution, the computationaly expensive operations are performed on more suitable hardware, and the burden on the mobile/edge device is reduced. However, transfering the frames between the mobile/edge device and the server often incurs intolerable latency for real-time tasks. 
+-->
+
+The purpose of this project is to explore a design for an object detection and classification system that achieves a high accuracy, has low latency, and requires little bandwidth when compared to current implementations. 
+
 <!---
 Deep Learning is becoming a ubiquitous field these days. It has wide range of applications, ranging from image classification to speech and language analysis. One such application is in the field of object detection.
 
@@ -43,29 +56,30 @@ Object Detection as the name states is a technique of using neural networks (tha
 
 This can be taken care of by GPUs (General Processing Units) that can not only accomodate such models' memory requirements but also speed up their operations by means of a graphics card. Problems arise at the hardware side of things, in particular, the cost. GPUs are very expensive. Since object detection can be required anywhere and everywhere, it's impractical, not to mention cost-intensiev to have GPU systems everywhere.
 
-MCUs or Microcontroller Units are ubiquitous systems that find application from military to healthcare and general-purpose systems. They're efficient and low-cost too. The disadvantage that sets back the implementation of object detection by means of MCUs is the limited memory available on-board for microcontrollers.
+MCUs or Microcontroller Units are ubiquitous systems that find application from military to healthcare and general-purpose systems. They're efficient and low-cost too. The disadvantage that sets back the implementtaion of object detection by means of MCUs is the limited memory available on-board for microcontrollers.
 -->
 
 <a href="#table">Back to Table of Contents</a>
 
 ## Related Work
 
-In their paper [1], "Real-Time Video Inference on Edge Devices via Adaptive Model Streaming", Khani et al. propose a system which tweaks use of the two techniques above to achieve a high accuracy, low-latency, low bandwidth real-time video inference system on the edge. The key insight is to use online learning to continually adapt a lightweight model running on the edge device. The lightweight model Is continually retrained on a cloud server and the updated weights are sent to the edge. These researchers tested their proposal by implementing a video semantic segmentation system on the Samsung Galaxy S10 GPU (Adreno 640) and achieved 5.1-17.0 percent improvement when compared to a pre-trained model.
+In their paper [1], "Real-Time Video Inference on Edge Devices via Adaptive Model Streaming", Khani et al. propose a system which tweaks use of the two techniques mentioned above (offloading and lightweight models) to achieve a high accuracy, low-latency, low bandwidth real-time video instance segmentation system on the edge. Their key insight is to use online learning to continually adapt a lightweight model running on the edge device. The lightweight model Is continually retrained on a cloud server and the updated weights are sent to the edge. These researchers tested their proposal by implementing a video semantic segmentation system on the Samsung Galaxy S10 GPU (Adreno 640) and achieved 5.1-17.0 percent improvement when compared to a pre-trained model.
+
+While this implementation showed the promise of the proposed system, the Samsung Galaxy GPU contains significantly more compute and memory resources than a typical microcontroller. As a result, this project seeks to determine whether the proposed system would translate well to highly resource constrained devices. In particular, we seek to evaluate the performance of a of this proposed system when the lightweight model on the edge is far smaller and requires far less computations than the model deployed by the researchers (exact target size of model tbd). The performance of the system will be compared to a standard lightweight model, and improvement in the performance as a function of bandwitdth requirements will be determined and analyzed.
 
 <a href="#table">Back to Table of Contents</a>
-
+<!----
 ## Project Proposal
 
 This project will focus on improving real-time video inferences on compute-limited edge devices. Common video inference tasks such as object detection, semantic segmentation and pose estimation typically employ the use of Deep Neural Networks (DNNs). However, these DNNs have a substantial memory footprint and require significant compute capabilities that are not present on many resource-constrained edge devices. In order to perform these tasks on those edge devices it is common to either (1) use a specialized "lightweight" model or (2) offload compute to a remote server. 
 
 A well designed "lightweight" model is more likely to fit and run in real-time on a resource-constrained device. Unfortunately, these models often suffer from a significant reduction in accuracy when compared to more complex models. On the other end, using a remote server to offload computation results in excellent accuracy, but the system will require high network bandwidth and incur significant delay on inference time. It is infeasible to tolerate this delay in many real-time systems. 
 
-In their paper [1], "Real-Time Video Inference on Edge Devices via Adaptive Model Streaming", Khani et al. propose a system which tweaks use of the two techniques above to achieve a high accuracy, low-latency, low bandwidth real-time video inference system on the edge. The key insight is to use online learning to continually adapt a lightweight model running on the edge device. The lightweight model Is continually retrained on a cloud server and the updated weights are sent to the edge. These researchers tested their proposal by implementing a video semantic segmentation system on the Samsung Galaxy S10 GPU (Adreno 640) and achieved 5.1-17.0 percent improvement when compared to a pre-trained model.
-
 While this implementation showed the promise of the proposed system, the Samsung Galaxy GPU contains significantly more compute and memory resources than a typical microcontroller. As a result, this project seeks to determine whether the proposed system would translate well to highly resource constrained devices. In particular, we seek to evaluate the performance of a of this proposed system when the lightweight model on the edge is far smaller and requires far less computations than the model deployed by the researchers (exact target size of model tbd). The performance of the system will be compared to a standard lightweight model, and improvement in the performance as a function of bandwitdth requirements will be determined and analyzed.
 
 <a href="#table">Back to Table of Contents</a>
-
+-->
+<!---
 ## Motivation
 
 Most efficient object detection models, i.e. the ones that have a high accuracy have a lot of parameters, and so they consume a lot of memory. These kind of models have their easiest deployment in servers or high-end PCs and Laptops, especially if they have a GPU and a graphics card. With MCUs having a memory in the order of a few kilobytes, it's near impossible to implement these at the edge level. Thus we need memory-optimized models.
@@ -75,7 +89,7 @@ One possible way to mitigate this problem is to just implement GPU-based systems
 The idea is to have one main model (Heavy Model) at the server end that could help update the edge level model (Lightweight model, possibly one at every location) to adapt to the current scenario to facilitate accurate object detection at a subsidized cost. This is exactly what we aim to do in this project.  
 
 <a href="#table">Back to Table of Contents</a>
-
+-->
 ## Deliverables
 
 * Working system simulated on cpu
@@ -130,7 +144,6 @@ The Lightweight model sends frames of the environment every 10 seconds or so to 
 <a href="#table">Back to Table of Contents</a>
 
 
-## Literature Survey
 
 ### Heavy Model
 
