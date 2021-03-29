@@ -1,0 +1,25 @@
+item {
+    name: "cup",
+    id: 1,
+    display_name: "cup"
+}
+item {
+    name: "diningtable",
+    id: 2,
+    display_name: "diningtable"
+}
+item {
+    name: "knife",
+    id: 3,
+    display_name: "knife"
+}
+item {
+    name: "scissors",
+    id: 4,
+    display_name: "scissors"
+}
+item {
+    name: "spoon",
+    id: 5,
+    display_name: "spoon"
+}
