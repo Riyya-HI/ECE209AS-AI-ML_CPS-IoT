@@ -1,0 +1,30 @@
+ GPU isn't used 
+mini_batch = 1, batch = 8, time_steps = 1, train = 0 
+nms_kind: greedynms (1), beta = 0.600000 
+nms_kind: greedynms (1), beta = 0.600000 
+nms_kind: greedynms (1), beta = 0.600000 
+
+ seen 64, trained: 32032 K-images (500 Kilo-batches_64) 
+Enter Image Path:  Detection layer: 139 - type = 28 
+ Detection layer: 150 - type = 28 
+ Detection layer: 161 - type = 28 
+data/dog.jpg: Predicted in 15299.226000 milli-seconds.
+bicycle: 92%	(left_x:  114   top_y:  127   width:  458   height:  299)
+dog: 98%	(left_x:  129   top_y:  225   width:  184   height:  316)
+truck: 92%	(left_x:  464   top_y:   77   width:  221   height:   93)
+pottedplant: 33%	(left_x:  681   top_y:  109   width:   37   height:   46)
+Enter Image Path:  Detection layer: 139 - type = 28 
+ Detection layer: 150 - type = 28 
+ Detection layer: 161 - type = 28 
+data/eagle.jpg: Predicted in 15543.356000 milli-seconds.
+bird: 97%	(left_x:  104   top_y:   82   width:  508   height:  366)
+Enter Image Path:  Detection layer: 139 - type = 28 
+ Detection layer: 150 - type = 28 
+ Detection layer: 161 - type = 28 
+data/horses.jpg: Predicted in 15753.274000 milli-seconds.
+horse: 77%	(left_x:   -1   top_y:  189   width:  157   height:  202)
+horse: 98%	(left_x:    3   top_y:  188   width:  312   height:  224)
+horse: 91%	(left_x:  248   top_y:  197   width:  172   height:  166)
+horse: 87%	(left_x:  369   top_y:  209   width:   87   height:  113)
+horse: 100%	(left_x:  432   top_y:  213   width:  163   height:  135)
+Enter Image Path: 

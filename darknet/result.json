@@ -1,0 +1,30 @@
+[
+{
+ "frame_id":1, 
+ "filename":"data/dog.jpg", 
+ "objects": [ 
+  {"class_id":7, "name":"truck", "relative_coordinates":{"center_x":0.747740, "center_y":0.214015, "width":0.287359, "height":0.161784}, "confidence":0.922794}, 
+  {"class_id":1, "name":"bicycle", "relative_coordinates":{"center_x":0.447301, "center_y":0.480771, "width":0.596511, "height":0.518868}, "confidence":0.923119}, 
+  {"class_id":16, "name":"dog", "relative_coordinates":{"center_x":0.287643, "center_y":0.665292, "width":0.239766, "height":0.549019}, "confidence":0.979146}, 
+  {"class_id":58, "name":"pottedplant", "relative_coordinates":{"center_x":0.910615, "center_y":0.228851, "width":0.047547, "height":0.079290}, "confidence":0.325272}
+ ] 
+}, 
+{
+ "frame_id":2, 
+ "filename":"data/eagle.jpg", 
+ "objects": [ 
+  {"class_id":14, "name":"bird", "relative_coordinates":{"center_x":0.463243, "center_y":0.516378, "width":0.657552, "height":0.714100}, "confidence":0.973971}
+ ] 
+}, 
+{
+ "frame_id":3, 
+ "filename":"data/horses.jpg", 
+ "objects": [ 
+  {"class_id":17, "name":"horse", "relative_coordinates":{"center_x":0.664082, "center_y":0.547404, "width":0.210601, "height":0.263478}, "confidence":0.996124}, 
+  {"class_id":17, "name":"horse", "relative_coordinates":{"center_x":0.205757, "center_y":0.585544, "width":0.403703, "height":0.437874}, "confidence":0.981999}, 
+  {"class_id":17, "name":"horse", "relative_coordinates":{"center_x":0.432443, "center_y":0.547858, "width":0.222950, "height":0.324239}, "confidence":0.907160}, 
+  {"class_id":17, "name":"horse", "relative_coordinates":{"center_x":0.533767, "center_y":0.519442, "width":0.112380, "height":0.220684}, "confidence":0.871966}, 
+  {"class_id":17, "name":"horse", "relative_coordinates":{"center_x":0.100379, "center_y":0.566012, "width":0.203407, "height":0.393675}, "confidence":0.770110}
+ ] 
+}
+]

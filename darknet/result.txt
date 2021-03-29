@@ -1,0 +1,16 @@
+ GPU isn't used 
+mini_batch = 1, batch = 8, time_steps = 1, train = 0 
+nms_kind: greedynms (1), beta = 0.600000 
+nms_kind: greedynms (1), beta = 0.600000 
+nms_kind: greedynms (1), beta = 0.600000 
+
+ seen 64, trained: 32032 K-images (500 Kilo-batches_64) 
+Enter Image Path:  Detection layer: 139 - type = 28 
+ Detection layer: 150 - type = 28 
+ Detection layer: 161 - type = 28 
+data/dog.jpg: Predicted in 18454.392000 milli-seconds.
+bicycle: 91%	(left_x:  114   top_y:  127   width:  457   height:  299)
+dog: 98%	(left_x:  129   top_y:  225   width:  184   height:  316)
+truck: 92%	(left_x:  464   top_y:   76   width:  221   height:   94)
+pottedplant: 32%	(left_x:  681   top_y:  109   width:   36   height:   45)
+Enter Image Path: 
