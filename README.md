@@ -122,6 +122,10 @@ Tiny-YOLO is a lightweight version of the “Gold Standard” Yolo model.
 
 ### "Gold Standard Model"
 
+Follow the instructions for building YOLOv4 found at: https://github.com/AlexeyAB/darknet
+
+Refer to experimental procedure to generate results.
+
 ### Lightweight Model
 
 Follow this for generating files for training [5]: https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
