@@ -307,6 +307,20 @@ This section would be updated soon
 
 [9] https://www.kapwing.com/
 
+[a] Sandler, M., Howard, A., Zhu, M., Zhmoginov, A. and Chen, L.C., 2018. Mobilenetv2: Inverted residuals and linear bottlenecks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 4510-4520). 
+
+[b] https://medium.com/analytics-vidhya/how-to-retrain-an-object-detection-model-with-a-custom-training-set-c827aa3eb796
+
+[c] https://roboflow.com/
+
+[d] https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173
+
+[e] https://developers.google.com/machine-learning/crash-course/classification/true-false-positive-negative
+
+[f] https://en.wikipedia.org/wiki/Precision_and_recall#/media/File:Precisionrecall.svg
+
+[g] https://www.tensorflow.org/lite
+
 <a href="#table">Back to Table of Contents</a>
 
 ## Common Errors and Fixes
