@@ -361,16 +361,11 @@ https://docs.google.com/presentation/d/1Ytl4gNqhI2qhu82NZwFP3tglB6PQfQGMbVwx3Wvj
 
 ## Final Presentation
 
-This section would be updated soon
+The final presentation slides can be viewed here: 
+
+https://docs.google.com/presentation/d/1WgViQY8lLbKRLnFKRDSbgv1rW9hdNzYOzYcCxp4ax34/edit?usp=sharing
 
 <a href="#table">Back to Table of Contents</a>
-
-## Demonstration
-
-This section would be updated soon
-
-<a href="#table">Back to Table of Contents</a>
-
 
 ## References
 [1] Khani, M., Hamadanian, P., Nasr-Esfahany, A. and Alizadeh, M., 2020. Real-Time Video Inference on Edge Devices via Adaptive Model Streaming. arXiv preprint arXiv:2006.06628.
