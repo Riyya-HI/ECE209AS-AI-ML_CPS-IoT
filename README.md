@@ -20,7 +20,8 @@ For our project website, please visit: https://riyya-hi.github.io/ECE209AS-AI-ML
 * [Deliverables](#deliverables)
 * [Technical Approach](#technical-approach)
 * [Literature Survey](#literature-survey)
-* [Results and Evaluations](#results-and-evaluations)
+* [Experimental Procedure](#experimental-procedure)
+* [Results and Evaluation](#results-and-evaluation)
 * [Limitations](#limitations)
 * [Conclusion](#conclusion)
 * [Future Work](#future-work)
@@ -233,7 +234,7 @@ Time windows of 10 and 20 seconds are used. Two separate sampling rates are also
 
 11: Analyze results
 
-
+<a href="#table">Back to Table of Contents</a>
 
 ## Results and Evaluation
 
