@@ -17,19 +17,16 @@ For our project website, please visit: https://riyya-hi.github.io/ECE209AS-AI-ML
 ## Table of Contents
 * [Introduction](#introduction)
 * [Related Work](#related-work)
-* [Project Proposal](#project-proposal)
-* [Motivation](#motivation)
-* [Deliverables](#deliverables)
 * [Technical Approach](#technical-approach)
-* [Literature Survey](#literature-survey)
-* [Timeline for the Project](#timeline-for-the-project)
-* [Results and Evaluations](#results-and-evaluations)
+* [Deliverables](#deliverables)
+* [Experimental Procedure](#experimental-procedure)
+* [Results and Evaluation](#results-and-evaluation)
 * [Limitations](#limitations)
 * [Conclusion](#conclusion)
 * [Future Work](#future-work)
+* [Instructions for Usage](#instructions-for-usage)
 * [Midterm Presentation](#midterm-presentation)
 * [Final Presentation](#final-presentation)
-* [Demonstration](#demonstration)
 * [References](#references)
 * [Common Errors and Fixes](#common-errors-and-fixes)
 
@@ -43,21 +40,8 @@ In order to perform the object detections and classification task on edge device
 
 A well designed "lightweight" model is more likely to fit and run in real-time on a resource-constrained device. These models reduce the memory footprint, power consumption, and inference time when compared to typical solutions. Unfortunately, these models often suffer from a significant reduction in accuracy when compared to more complex models. On the other end, using a remote server to offload computation results in excellent accuracy and reduces the workload on mobile/edge devices. However, offloading the video frames incurs significant delay on inference time. It is infeasible to tolerate this delay in many real-time systems. Furthermore, sending video frames with a reasonable resolution over a communication link requires ample network bandwidth that may be too expensive or simply unavailable. 
 
-<!---
-There are two common solutions that are used to improve the feasibility and performance of object detection systems at the edge. First, lightweight object detection models such as tiny-yolo and ssd-mobbilenetV2 (cite both of these) have been created. These models reduce the memory footprint, power consumption, and inference time when compared to typical solutions. However, the downside is that these lightweight models often perform significantly worse than the larger, more computationaly expensive models, resulting in a drop in accuracy (maybe cite something here). A second solution is to offload incoming video frames to a more computationally capable node, such as a server. In this solution, the computationaly expensive operations are performed on more suitable hardware, and the burden on the mobile/edge device is reduced. However, transfering the frames between the mobile/edge device and the server often incurs intolerable latency for real-time tasks. 
--->
+The purpose of this project is to explore a design for an object detection and classification system that achieves a high accuracy, has low latency, and requires little bandwidth when compared to typical object detection and classification systems.. 
 
-The purpose of this project is to explore a design for an object detection and classification system that achieves a high accuracy, has low latency, and requires little bandwidth when compared to current implementations. 
-
-<!---
-Deep Learning is becoming a ubiquitous field these days. It has wide range of applications, ranging from image classification to speech and language analysis. One such application is in the field of object detection.
-
-Object Detection as the name states is a technique of using neural networks (that form the backbone of Deep Learning) to analyze and classify objects either in image frames or real-time streaming videos. These require one of the more complex implementations of neural networks to achieve a high accuracy, resulting in their models require a lot of memory. Models such are YOLO (You Only Look Once) are becoming increasingly popular these days.
-
-This can be taken care of by GPUs (General Processing Units) that can not only accomodate such models' memory requirements but also speed up their operations by means of a graphics card. Problems arise at the hardware side of things, in particular, the cost. GPUs are very expensive. Since object detection can be required anywhere and everywhere, it's impractical, not to mention cost-intensiev to have GPU systems everywhere.
-
-MCUs or Microcontroller Units are ubiquitous systems that find application from military to healthcare and general-purpose systems. They're efficient and low-cost too. The disadvantage that sets back the implementtaion of object detection by means of MCUs is the limited memory available on-board for microcontrollers.
--->
 
 **Performance Metrics**
 
@@ -69,38 +53,8 @@ The mean average precision (mAP) and intersection over union (IoU) were calculat
 
 In their paper [1], "Real-Time Video Inference on Edge Devices via Adaptive Model Streaming", Khani et al. propose a system which tweaks use of the two techniques mentioned above (offloading and lightweight models) to achieve a high accuracy, low-latency, low bandwidth real-time video instance segmentation system on the edge. Their key insight is to use online learning to continually adapt a lightweight model running on the edge device. The lightweight model Is continually retrained on a cloud server and the updated weights are sent to the edge. These researchers tested their proposal by implementing a video semantic segmentation system on the Samsung Galaxy S10 GPU (Adreno 640) and achieved 5.1-17.0 percent improvement when compared to a pre-trained model.
 
-While this implementation showed the promise of the general framework proposed, the Samsung Galaxy GPU contains significantly more compute and memory resources than a typical edge/mobile device. This is becasue video instance segmentation requires more intensive models than other deep learning tasks. As a result, this project seeks to determine whether the proposed system would translate well to more resource constrained devices that don't have parallel GPU-like computing capabilities. In particular, we seek to evaluate the performance of this proposed system when the lightweight model on the edge is performing object detection/classification and does not have access to a GPU. 
+While this implementation showed the promise of the general framework that they proposed, the Samsung Galaxy GPU contains significantly more compute and memory resources than a typical edge/mobile device. This is required because video instance segmentation requires more intensive models than other deep learning tasks. As a result, this project seeks to determine whether the system proposed by Khani et al. would translate well to more resource constrained devices that don't have parallel GPU-like computing capabilities. In particular, we seek to evaluate the performance of their proposed system when the lightweight model on the edge is performing object detection/classification and does not have access to a GPU. Thus we would be targeting processors similar in characteristics to the cortex-A series. 
 
-<a href="#table">Back to Table of Contents</a>
-<!----
-## Project Proposal
-
-This project will focus on improving real-time video inferences on compute-limited edge devices. Common video inference tasks such as object detection, semantic segmentation and pose estimation typically employ the use of Deep Neural Networks (DNNs). However, these DNNs have a substantial memory footprint and require significant compute capabilities that are not present on many resource-constrained edge devices. In order to perform these tasks on those edge devices it is common to either (1) use a specialized "lightweight" model or (2) offload compute to a remote server. 
-
-A well designed "lightweight" model is more likely to fit and run in real-time on a resource-constrained device. Unfortunately, these models often suffer from a significant reduction in accuracy when compared to more complex models. On the other end, using a remote server to offload computation results in excellent accuracy, but the system will require high network bandwidth and incur significant delay on inference time. It is infeasible to tolerate this delay in many real-time systems. 
-
-While this implementation showed the promise of the proposed system, the Samsung Galaxy GPU contains significantly more compute and memory resources than a typical microcontroller. As a result, this project seeks to determine whether the proposed system would translate well to highly resource constrained devices. In particular, we seek to evaluate the performance of a of this proposed system when the lightweight model on the edge is far smaller and requires far less computations than the model deployed by the researchers (exact target size of model tbd). The performance of the system will be compared to a standard lightweight model, and improvement in the performance as a function of bandwitdth requirements will be determined and analyzed.
-
-<a href="#table">Back to Table of Contents</a>
--->
-<!---
-## Motivation
-
-Most efficient object detection models, i.e. the ones that have a high accuracy have a lot of parameters, and so they consume a lot of memory. These kind of models have their easiest deployment in servers or high-end PCs and Laptops, especially if they have a GPU and a graphics card. With MCUs having a memory in the order of a few kilobytes, it's near impossible to implement these at the edge level. Thus we need memory-optimized models.
-
-One possible way to mitigate this problem is to just implement GPU-based systems everywhere for accurate object detection. But that would cost a ton of money for a single implementation itself. We could instead use MCUs to minimize the cost. But MCU based models cannot render the same kind of accuracy.
-
-The idea is to have one main model (Heavy Model) at the server end that could help update the edge level model (Lightweight model, possibly one at every location) to adapt to the current scenario to facilitate accurate object detection at a subsidized cost. This is exactly what we aim to do in this project.  
-
-<a href="#table">Back to Table of Contents</a>
--->
-## Deliverables
-
-* Working system simulated on cpu
-* Analysis of accuracy improvements
-* Analysis of bandwidth requirements
-* Analysis of bandwidth accuracy tradeoffs
-* Memory footprint analysis
 
 <a href="#table">Back to Table of Contents</a>
 
@@ -114,78 +68,63 @@ The idea is to have one main model (Heavy Model) at the server end that could he
 
 **EDGE side**
 
-Perform inference using lightweight model&nbsp;
+A lightweight object detection/classification model will be running on our simulated edge device. This model will be initialized with pre-trained weights on the COCO dataset. It will run for a period of time “t” while sampling incoming frames at rate “r” to be sent to a server. On another interval “t2” it will receive new model weights from the server, and will update itself with these new weights. The process will continue indefinitely.
 
-Sample frames to send to server&nbsp;
-
-Update model with weights received from server
 
 **Server Side**
 
-**Inference Phase:** server receives new sample frames, runs the teacher model on them to obtain the labels and adds the frames, labels, and frame timestamps to a training data buffer, Beta
+On the server side, there are two models- (1) a deep and complex “gold-standard” object detection/classification model that is the current state-of-the-art in terms of accuracy, and (2) a copy of the lightweight model running at the edge. There are two phases associated with the server side:
 
-**Training Phase:** uses the labeled frames to train the “student” model that runs on the edge device.
+Inference phase- the server will receive the new frames sent from the edge device, it will run the “gold-standard” model on these frames to generate labels, and will save the labels and frames in a buffer.
+
+Training phase- Using the labels generated in the inference phase, the copy of the lightweight model will be trained on the received frames.
+
+Once the lightweight model has finished training, the server will send the new weights back to the edge. 
+
+## Deliverables
+
+In terms of specific deliverables, this project will (1) get a working simulation on a local pc of the edge-server object detection system. This will allow us to (2) obtain performance metrics that will be analyzed in regards to the change in accuracy of the simulated system when compared to a standard lightweight model implementation. Then, we will (3) explore the accuracy improvements as a function of the bandwidth requirements of the system (change the rate at which we send frames to the server, and the number of weights we send back to the lightweight model). 
+
+This system is designed to be real-time. The simulation created on the local pc is not real-time, but the accuracy statistics generated will be the same as those generated in a true implementation of the system.
 
 
-### Heavy Model
+### “Gold Standard” Model
 
-The Heavy Model is the model at the server side. Heavy as the term states pertains to the size of the model (memory). This is the model that would receive the real-time frames from the Lightweight model. Based on the frames it receives, it would train a copy of the lightweight model against that frame. This would lead difference in the values of some of the weights. This model would then send a compressed version of these specific weights (i.e. only those that require updation) to the lightweight model. It would incorporate those. 
+The “Gold Standard” model resides on the server side. This model should be the best performing model available, as it will be generating the “truth” values for incoming frames. This requirement necessitates a complex, deep object detection/classification as the choice for the “Gold Standard” model.
 
-For this project, we are using YOLO V3 Gold Standard Model. YOLO stands for You Only Look Once. This is a state-of-the-art deep learning model used for object detection. It is implemented using Tensorflow. It processes images at 30 FPS and has a mAP of 57.9% on COCO test-dev while it's on Pascal Titan X. Although there is a tradeoff between the speed and accuracy, this can be easily balanced (i.e. the specific values can be chosen) by simply altering the size of the model without any retraining required.
+For this project, we are using YOLOV4 as the Gold Standard Model. This is a state-of-the-art deep learning model used for object detection/classification. For the simulation, we pulled in the YOLOv4 Tensorflow implementation from the AlexeyAB Github repo (cite here). It obtains a mAP of 57.9% on the COCO dataset. The source code was altered to suit the needs of this system.
 
-It has a single neural network applied to the full image. This network divides the image into regions and predicts bounding boxes and probabilities for each region. These bounding boxes are weighted by the predicted probabilities.
+The YOLOv4 object detection/classification network uses a single neural network applied to the full image. This network divides the image into regions and predicts bounding boxes and probabilities of the different classes for each region. These bounding boxes are weighted by the predicted probabilities.
 
-What makes the third version or V3 stand out is that it uses a few tricks to improve training and increase performance, including: multi-scale predictions, a better backbone classifier, and more as discussed in [4].
+What makes the third version or V4 stand out is that it uses a few tricks to improve training and increase performance, including: multi-scale predictions, a better backbone classifier, and more as discussed in [4].
 
 <a href="#table">Back to Table of Contents</a>
 
 ### Lightweight Model
 
-The Lightweight Model is a model at the edge side (like a microcontroller, edge(end) device). Just like Heavy model, the term Lightweight pertains to the size of the model at the end device (edge). The reason why we implement a lightweight model is that out target devices are microcontrollers or MCUs. Even for a smartphone, the memory is constrained. Most machine learning  models, especially the deep learning ones, consume copious amounts of memory (in the order of GBs and even TBs). A smartphone itself cannot handle this memory capacity (let alone something as resource-constrained as an MCU). That's why it's important to optimize the memory at the edge side. This model has a very low capacity making it suitable for deployment at the edge side.
+It is important that this lightweight model is suitable for edge devices that do not contain parallel computing resources and copious memory. Many state-of-the-art machine learning  models, especially the deep learning ones, consume GBs and even TBs amount of memory. Devices like a smartphone cannot handle this memory capacity (let alone something as resource-constrained as an MCU). That's why it's important to optimize the model to have a small memory footprint and low inference time.
 
-The Lightweight model sends frames of the environment every 10 seconds or so to the Heavy model at the server side. Once the Heavy model receives these frames, it retrains a copy of the Lightweight model against it, updates specific weights and sends these specific weights to the Lightweight model. The Lightweight model upon receiving these weights incorporates that to facilitate a more accurate object detection. 
+For this reason, we decided to implement our system with two different lightweight models- SSD Mobilenet and Tiny-yolo. 
 
-<a href="#table">Back to Table of Contents</a>
+**MobileNet V2**
 
+MobileNet V2 is a popular deep-learning model based on an inverted residual structure where the shortcut connections are between the thin bottleneck layers. The intermediate expansion layer uses lightweight depthwise convolutions to filter features as a source of non-linearity. [a]
 
-
-### Heavy Model
-
-| S.No  | Model Name          | Model Size | Site of deployment    | Datasets | Advantages         
-| ----- | ----------          | ---------- | ------------------    | -------- | ------------------------------------------------|
-|  1.   | YOLO v3             | 2.3 MB     | Servers, laptops, PCs | COCO     | State-of-the-Art model for object detection     |
-|  2.   | YOLO v4             | 27 MB      | Servers, laptops, PCs | COCO     | Smaller than YOLO v3, same accuracy   	        |
-|  2.   | YOLO vPP            | 27 MB      | Servers, laptops, PCs | COCO     | Latest addition in the YOLO universe     	|
+It also uses SSD or Single-Shot Detector. What this means is that it would span through the image only once and then detects the object.
 
 
-We decided to go ahead with YOLO v4 as it renders the same accuracy as YOLO v3 at a smaller size. We couldn't have gone ahead with YOLO vPP as that was release long after work had started. But this can be a future implementation.
+**Tiny-YOLO**
 
+Tiny-YOLO is a lightweight version of the “Gold Standard” Yolo model.
 
-
-### Lightweight Model
-
-| S.No  | Model Name          | Model Size | Site of deployment    | Datasets | Limitations         
-| ----- | ----------          | ---------- | ------------------    | -------- | ------------------------------------------------|
-|  1.   | Tiny DSOD           | 2.3 MB     | Raspberry Pi          | COCO     | Has complex cmake and caffe dependencies        |
-|  2.   | SSD MobileNet       | 27 MB      | Raspberry Pi          | COCO     | Long training time of ~ 3-8 hours      	        |
-|  3.   | Tiny ML - Person ID | ~ KBs      | Raspberry Pi, Arduino | Person   | Limits the type of objects that can be detected |
-
-
-While Tiny-DSOD is a smaller model, the CMake and Caffe dependencies are a little difficult in installation as compared to tensorflow, which also has more internet support available. Do we decided to go ahead with SSD Mobilenet. The Tiny ML - Person detection model also has ample support available. It can also be implemented on Arduino, a cheaper and an even more resource-constrained platform. But then that would just limit the detection to persons. We aim for something more generalizable. Hence we decided to move ahead with MobileNet.
-
-NOTE: It's true that YOLO v4 can be implemented on Raspberry Pi, but it won't run as quickly as accurately as it would run on servers. A lighter model would work better on a resource like Raspberry Pi which is constrained in comparison to laptopa, PCs, servers and GPUs.
-
-Thus, our final choices are:
-
-**Heavy Model: YOLO v4**
-
-**Lightweight Model: MobileNet**
-
-<a href="#table">Back to Table of Contents</a>
 
 ## Implementation
 
-### Heavy Model
+### "Gold Standard Model"
+
+Follow the instructions for building YOLOv4 found at: https://github.com/AlexeyAB/darknet
+
+Refer to experimental procedure to generate results.
 
 ### Lightweight Model
 
@@ -236,7 +175,7 @@ Time windows of 10 and 20 seconds are used. Two separate sampling rates are also
 
 11: Analyze results
 
-
+<a href="#table">Back to Table of Contents</a>
 
 ## Results and Evaluation
 
@@ -258,7 +197,33 @@ Using a 20 second time window and a sampling rate of 5fps, a mAP of 20.69 and av
 
 In all experiments, the proposed system achieved better performance metrics than the baseline pre-trained model. There was only a slight improvement in performance metrics when going from 5 FPS to 20 FPS. Thus the small gain in accuracy achieved with using 20 FPS would likely not be worth the extra bandwidth requirements.
 
-Put 4 graphs here (MAP.svg, MAPvsTime.svg, IOU.svg, IOUvsTime.svg)
+<p align="center">
+	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/IOU.svg" height="400", width="750"/>
+	<br/>
+	<strong>IoU or Intersection over Union</strong>
+</p>
+
+
+<p align="center">
+	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/IOUvsTime.svg" height="400", width="750"/>
+	<br/>
+	<strong>IoU vs Time Graphs</strong>
+</p>
+
+
+<p align="center">
+	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/MAP.svg" height="400", width="750"/>
+	<br/>
+	<strong>mAP or Mean Average Precision</strong>
+</p>
+
+
+<p align="center">
+	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/MAPvsTime.svg" height="400", width="750"/>
+	<br/>
+	<strong>mAP vs time Graph</strong>
+</p>
+
 
 Lastly, in order to reduce the bandwidth requirements of sending model weights over the communication link, an experiment was conducted that stopped backpropogation early in the Tiny-Yolo model when training. This means that only a small subset of the weights would be updated in the later layers of the model. Using this technique, we were not able to achieve noticeable improvements to performance. It is possible that this is due the hyperparameter choice when training. 
 
@@ -287,27 +252,19 @@ For SSD-Mobilenet, training requires TFRecord files. These files are used for tr
 
 ## Limitations
 
-* MobileNet takes some time to train
-* Currently this project only evaluates how a heavy model improves a lightweight model, all at the same end
-* With our specific aim, time constraint and the availability of models, implementation on Arduino is difficult
+An improvement in performance was seen when using Tiny-Yolo, but not SSD-Mobilenet. This is likely due to limitations of the applied training strategy. The improvements seen by Tiny-Yolo may not be significant enought to warrant the adoption of this system for object detection systems. 
 
 <a href="#table">Back to Table of Contents</a>
 
 ## Conclusion
 
-* MobileNet V2 and Tiny-YOLO were used
-* While MobileNet doesn't perform badly, Tiny YOLO shows improvement in accuracy so that is the better model choice
+In conclusion, a unique object detection system was implemented and evaluated in order to determine if the speed and accuracy of inference could be improved with limited bandwidth availabilities. A lightweight model on the edge was retrained based on a "gold standard model" residing on the server. Various different hyperparameters of the system were altered in order to achieve the best bandwidth accuracy tradeoff. 
 
 <a href="#table">Back to Table of Contents</a>
 
 ## Future Work
 
-* Actually implement lightweight model on edge device such as raspberry pi
-* Implement gold standard and lightweight copy model on actual server
-* Compare simulated results with real example
-* Use a smaller model on Raspberry Pi, something that may even train faster
-* Implement an IP stack to transfer weights and frames
-* Implement YOLO vPP on the server side
+Future work includes implementing the full system, rather than simulating it. This would allow a comparison of the results achieved in this experiment. Furthermore, fine-tuning the training strategy could yield better results. 
 
 <a href="#table">Back to Table of Contents</a>
 
@@ -345,11 +302,13 @@ To analyze the lightweight model's (before and after) performance, we shot video
 1. Split the video into segments of 10 seconds each (this can vary as per your needs).
 2. Split each video into frames at 30 FPS (basically a high FPS).
 3. Test the lightweight model's performance on a frame from 0-10 seconds. This is your baseline performance.
-4. Test the heavy model's performance on the same frame from 0-10 seconds. This is your ground truth.
-5. Retrain the lightweight model based on the new ground truth generated from the heavy model.
+4. Test the gold standard model's performance on the same frame from 0-10 seconds. This is your ground truth.
+5. Retrain the lightweight model based on the new ground truth generated from the gold standard model.
 6. Test the lightweight model's performance on a frame from 10-20 seconds after it gets retrained. This is your improved performance.
 7. This new performance then becomes your new baseline and a frame from the next segment, i.e. 20-30 seconds becomes your next test image.
 8. Repeat steps 3-7 for a few contiguous video segments.
+
+<a href="#table">Back to Table of Contents</a>
 
 ## Midterm Presentation
 
@@ -436,4 +395,3 @@ protoc --python_out=. .\object_detection\protos\input_reader.proto
 protoc --python_out=. .\object_detection\protos\center_net.proto
 
 <a href="#table">Back to Table of Contents</a>
-
