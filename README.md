@@ -306,8 +306,10 @@ It's important to follow the steps properly in these tutorials, yet there may be
 
 Follow the steps in [7]. [7] details steps for MobileNet V1. For implementing V2, just replace the file with the MV2_folder by placing it in a folder called tflite2. 
 
-The pre-trained model is basically a tflite or Tensorflow Lite file which is optimized in size. It’s about 15-25 MB, suitable for deployment purposes in Raspberry Pi [g].
+The pre-trained model is basically a tflite or Tensorflow Lite file which is optimized in size. It’s about 15-25 MB, suitable for deployment purposes in Raspberry Pi [16].
 Clone the repo in [7] and add the MV2_folder
+
+The pretrained model has been adapted from [7] and the model V2 has been taken from [17].
 
 #### Retraining
 
@@ -374,19 +376,21 @@ This section would be updated soon
 
 [9] https://www.kapwing.com/
 
-[a] Sandler, M., Howard, A., Zhu, M., Zhmoginov, A. and Chen, L.C., 2018. Mobilenetv2: Inverted residuals and linear bottlenecks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 4510-4520). 
+[10] Sandler, M., Howard, A., Zhu, M., Zhmoginov, A. and Chen, L.C., 2018. Mobilenetv2: Inverted residuals and linear bottlenecks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 4510-4520). 
 
-[b] https://medium.com/analytics-vidhya/how-to-retrain-an-object-detection-model-with-a-custom-training-set-c827aa3eb796
+[11] https://medium.com/analytics-vidhya/how-to-retrain-an-object-detection-model-with-a-custom-training-set-c827aa3eb796
 
-[c] https://roboflow.com/
+[12] https://roboflow.com/
 
-[d] https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173
+[13] https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173
 
-[e] https://developers.google.com/machine-learning/crash-course/classification/true-false-positive-negative
+[14] https://developers.google.com/machine-learning/crash-course/classification/true-false-positive-negative
 
-[f] https://en.wikipedia.org/wiki/Precision_and_recall#/media/File:Precisionrecall.svg
+[15] https://en.wikipedia.org/wiki/Precision_and_recall#/media/File:Precisionrecall.svg
 
-[g] https://www.tensorflow.org/lite
+[16] https://www.tensorflow.org/lite
+
+[17] https://awesomeopensource.com/project/kaka-lin/object-detection#ssdlite-mobilenet-v2
 
 <a href="#table">Back to Table of Contents</a>
 
