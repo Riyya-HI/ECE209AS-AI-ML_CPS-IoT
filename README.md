@@ -17,9 +17,8 @@ For our project website, please visit: https://riyya-hi.github.io/ECE209AS-AI-ML
 ## Table of Contents
 * [Introduction](#introduction)
 * [Related Work](#related-work)
-* [Deliverables](#deliverables)
 * [Technical Approach](#technical-approach)
-* [Literature Survey](#literature-survey)
+* [Deliverables](#deliverables)
 * [Experimental Procedure](#experimental-procedure)
 * [Results and Evaluation](#results-and-evaluation)
 * [Limitations](#limitations)
@@ -58,6 +57,31 @@ While this implementation showed the promise of the general framework that they 
 
 
 <a href="#table">Back to Table of Contents</a>
+
+## Technical Approach
+
+<p align="center">
+	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Tech_Appr_1.jpg" height="400", width="750"/>
+	<br/>
+	<strong>Transfer of frames and weights between the models</strong>
+</p>
+
+**EDGE side**
+
+A lightweight object detection/classification model will be running on our simulated edge device. This model will be initialized with pre-trained weights on the COCO dataset. It will run for a period of time “t” while sampling incoming frames at rate “r” to be sent to a server. On another interval “t2” it will receive new model weights from the server, and will update itself with these new weights. The process will continue indefinitely.
+
+
+**Server Side**
+
+On the server side, there are two models- (1) a deep and complex “gold-standard” object detection/classification model that is the current state-of-the-art in terms of accuracy, and (2) a copy of the lightweight model running at the edge. There are two phases associated with the server side:
+
+Inference phase- the server will receive the new frames sent from the edge device, it will run the “gold-standard” model on these frames to generate labels, and will save the labels and frames in a buffer.
+
+Training phase- Using the labels generated in the inference phase, the copy of the lightweight model will be trained on the received frames.
+
+Once the lightweight model has finished training, the server will send the new weights back to the edge. 
+
+
 
 ## Deliverables
 
