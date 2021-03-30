@@ -268,7 +268,7 @@ Lastly, in order to reduce the bandwidth requirements of sending model weights o
 We did not achieve any considerable boost in accuracy when using SSD-Mobilenet. 
 
 <p align="center">
-	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Images/Frame0.jpg" height="200", width="350"/>
+	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Images/0-10-Im-Base.jpg" height="200", width="350"/>
 	<br/>
 	<strong>Pre-Trained MobileNet V2</strong>
 </p>
