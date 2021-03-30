@@ -118,67 +118,9 @@ It also uses SSD or Single-Shot Detector. What this means is that it would span 
 Tiny-YOLO is a lightweight version of the “Gold Standard” Yolo model.
 
 
-
-
-### Heavy Model
-
-The Heavy Model is the model at the server side. Heavy as the term states pertains to the size of the model (memory). This is the model that would receive the real-time frames from the Lightweight model. Based on the frames it receives, it would train a copy of the lightweight model against that frame. This would lead difference in the values of some of the weights. This model would then send a compressed version of these specific weights (i.e. only those that require updation) to the lightweight model. It would incorporate those. 
-
-For this project, we are using YOLO V3 Gold Standard Model. YOLO stands for You Only Look Once. This is a state-of-the-art deep learning model used for object detection. It is implemented using Tensorflow. It processes images at 30 FPS and has a mAP of 57.9% on COCO test-dev while it's on Pascal Titan X. Although there is a tradeoff between the speed and accuracy, this can be easily balanced (i.e. the specific values can be chosen) by simply altering the size of the model without any retraining required.
-
-It has a single neural network applied to the full image. This network divides the image into regions and predicts bounding boxes and probabilities for each region. These bounding boxes are weighted by the predicted probabilities.
-
-What makes the third version or V3 stand out is that it uses a few tricks to improve training and increase performance, including: multi-scale predictions, a better backbone classifier, and more as discussed in [4].
-
-<a href="#table">Back to Table of Contents</a>
-
-### Lightweight Model
-
-The Lightweight Model is a model at the edge side (like a microcontroller, edge(end) device). Just like Heavy model, the term Lightweight pertains to the size of the model at the end device (edge). The reason why we implement a lightweight model is that out target devices are microcontrollers or MCUs. Even for a smartphone, the memory is constrained. Most machine learning  models, especially the deep learning ones, consume copious amounts of memory (in the order of GBs and even TBs). A smartphone itself cannot handle this memory capacity (let alone something as resource-constrained as an MCU). That's why it's important to optimize the memory at the edge side. This model has a very low capacity making it suitable for deployment at the edge side.
-
-The Lightweight model sends frames of the environment every 10 seconds or so to the Heavy model at the server side. Once the Heavy model receives these frames, it retrains a copy of the Lightweight model against it, updates specific weights and sends these specific weights to the Lightweight model. The Lightweight model upon receiving these weights incorporates that to facilitate a more accurate object detection. 
-
-<a href="#table">Back to Table of Contents</a>
-
-
-
-### Heavy Model
-
-| S.No  | Model Name          | Model Size | Site of deployment    | Datasets | Advantages         
-| ----- | ----------          | ---------- | ------------------    | -------- | ------------------------------------------------|
-|  1.   | YOLO v3             | 2.3 MB     | Servers, laptops, PCs | COCO     | State-of-the-Art model for object detection     |
-|  2.   | YOLO v4             | 27 MB      | Servers, laptops, PCs | COCO     | Smaller than YOLO v3, same accuracy   	        |
-|  2.   | YOLO vPP            | 27 MB      | Servers, laptops, PCs | COCO     | Latest addition in the YOLO universe     	|
-
-
-We decided to go ahead with YOLO v4 as it renders the same accuracy as YOLO v3 at a smaller size. We couldn't have gone ahead with YOLO vPP as that was release long after work had started. But this can be a future implementation.
-
-
-
-### Lightweight Model
-
-| S.No  | Model Name          | Model Size | Site of deployment    | Datasets | Limitations         
-| ----- | ----------          | ---------- | ------------------    | -------- | ------------------------------------------------|
-|  1.   | Tiny DSOD           | 2.3 MB     | Raspberry Pi          | COCO     | Has complex cmake and caffe dependencies        |
-|  2.   | SSD MobileNet       | 27 MB      | Raspberry Pi          | COCO     | Long training time of ~ 3-8 hours      	        |
-|  3.   | Tiny ML - Person ID | ~ KBs      | Raspberry Pi, Arduino | Person   | Limits the type of objects that can be detected |
-
-
-While Tiny-DSOD is a smaller model, the CMake and Caffe dependencies are a little difficult in installation as compared to tensorflow, which also has more internet support available. Do we decided to go ahead with SSD Mobilenet. The Tiny ML - Person detection model also has ample support available. It can also be implemented on Arduino, a cheaper and an even more resource-constrained platform. But then that would just limit the detection to persons. We aim for something more generalizable. Hence we decided to move ahead with MobileNet.
-
-NOTE: It's true that YOLO v4 can be implemented on Raspberry Pi, but it won't run as quickly as accurately as it would run on servers. A lighter model would work better on a resource like Raspberry Pi which is constrained in comparison to laptopa, PCs, servers and GPUs.
-
-Thus, our final choices are:
-
-**Heavy Model: YOLO v4**
-
-**Lightweight Model: MobileNet**
-
-<a href="#table">Back to Table of Contents</a>
-
 ## Implementation
 
-### Heavy Model
+### "Gold Standard Model"
 
 ### Lightweight Model
 
@@ -281,7 +223,7 @@ For SSD-Mobilenet, training requires TFRecord files. These files are used for tr
 ## Limitations
 
 * MobileNet takes some time to train
-* Currently this project only evaluates how a heavy model improves a lightweight model, all at the same end
+* Currently this project only evaluates how a gold standard model improves a lightweight model, all at the same end
 * With our specific aim, time constraint and the availability of models, implementation on Arduino is difficult
 
 <a href="#table">Back to Table of Contents</a>
@@ -338,8 +280,8 @@ To analyze the lightweight model's (before and after) performance, we shot video
 1. Split the video into segments of 10 seconds each (this can vary as per your needs).
 2. Split each video into frames at 30 FPS (basically a high FPS).
 3. Test the lightweight model's performance on a frame from 0-10 seconds. This is your baseline performance.
-4. Test the heavy model's performance on the same frame from 0-10 seconds. This is your ground truth.
-5. Retrain the lightweight model based on the new ground truth generated from the heavy model.
+4. Test the gold standard model's performance on the same frame from 0-10 seconds. This is your ground truth.
+5. Retrain the lightweight model based on the new ground truth generated from the gold standard model.
 6. Test the lightweight model's performance on a frame from 10-20 seconds after it gets retrained. This is your improved performance.
 7. This new performance then becomes your new baseline and a frame from the next segment, i.e. 20-30 seconds becomes your next test image.
 8. Repeat steps 3-7 for a few contiguous video segments.
