@@ -37,11 +37,11 @@ For our project website, please visit: https://riyya-hi.github.io/ECE209AS-AI-ML
 
 State-of-the-art deep neural networks (DNNs) can now achieve high accuracy in a broad spectrum of areas such as computer vision, speech analysis, language processing, and mobile sensing. However, high execution times and energy consumption remain major barriers to large-scale deployment of deep learning services on lower-end embedded and/or mobile sensing devices.
 
-Object detection and classification is a deep learning task that detects objects within an image or video frame, draws a bounding box around each detected object, and classifies each object as a particular class. The object detection and classification task is one such task that follows the pattern mentioned above. Great strides have been made in improving accuracy and performance for this task, but it remains largely infeasible to use such state-of-the-art networks on the edge. Usually, highly parrallel computing hardware such as GPUs, TPUs, or neural network accelerators are required to perform this task in real time (typically around 30fps) on video input. This hardware is far too expensive to be included on a large scale within edge devices.
+Object detection and classification is a deep learning task that detects objects within an image or video frame, draws a bounding box around each detected object, and classifies each object as a particular class. The object detection and classification task is one such task that follows the pattern mentioned above. Great strides have been made in improving accuracy and performance for this task, but it remains largely infeasible to use such state-of-the-art networks on the edge. Usually, highly parallel computing hardware such as GPUs, TPUs, or neural network accelerators are required to perform this task in real time (typically around 30fps) on video input. This hardware is far too expensive to be included on a large scale within edge devices.
 
 In order to perform the object detections and classification task on edge devices, it is common to either (1) use a specialized "lightweight" model or (2) offload compute to a remote server. 
 
-A well designed "lightweight" model is more likely to fit and run in real-time on a resource-constrained device. These models reduce the memory footprint, power consumption, and inference time when compared to typical solutions. Unfortunately, these models often suffer from a significant reduction in accuracy when compared to more complex models. On the other end, using a remote server to offload computation results in excellent accuracy and reduces the the workload on mobile/edge devices. However, offloading the video frames incurs significant delay on inference time. It is infeasible to tolerate this delay in many real-time systems. Furthermore, sending video frames with a reasonable resolution over a communication link requires ample network bandwidth that may be expensive or unavailable. 
+A well designed "lightweight" model is more likely to fit and run in real-time on a resource-constrained device. These models reduce the memory footprint, power consumption, and inference time when compared to typical solutions. Unfortunately, these models often suffer from a significant reduction in accuracy when compared to more complex models. On the other end, using a remote server to offload computation results in excellent accuracy and reduces the workload on mobile/edge devices. However, offloading the video frames incurs significant delay on inference time. It is infeasible to tolerate this delay in many real-time systems. Furthermore, sending video frames with a reasonable resolution over a communication link requires ample network bandwidth that may be too expensive or simply unavailable. 
 
 <!---
 There are two common solutions that are used to improve the feasibility and performance of object detection systems at the edge. First, lightweight object detection models such as tiny-yolo and ssd-mobbilenetV2 (cite both of these) have been created. These models reduce the memory footprint, power consumption, and inference time when compared to typical solutions. However, the downside is that these lightweight models often perform significantly worse than the larger, more computationaly expensive models, resulting in a drop in accuracy (maybe cite something here). A second solution is to offload incoming video frames to a more computationally capable node, such as a server. In this solution, the computationaly expensive operations are performed on more suitable hardware, and the burden on the mobile/edge device is reduced. However, transfering the frames between the mobile/edge device and the server often incurs intolerable latency for real-time tasks. 
@@ -210,38 +210,15 @@ To analyze the lightweight model's (before and after) performance, we shot video
 7. This new performance then becomes your new baseline and a frame from the next segment, i.e. 20-30 seconds becomes your next test image.
 8. Repeat steps 3-7 for a few contiguous video segments.
 
-## Timeline for Project **
-
-**Weeks 1-3:** Researching different ideas in the domain of Machine Learning for CPS Systems
-
-**Week 4:** Discussion on projects, especially the one on adaptive model streaming techniques for object detection
-
-**Week 5:** Finalizing the project **Analysis of adaptive model streaming techniques on highly resource constrained devices for object detection**
-
-**Weeks 6-7:** Surveying different models (both Heavy as well as Lightweight) for object detection and finalising them
-
-**Future Plan**
-
-**Week 8: Mid-term Presentation**
-
-**Weeks 8-10:** Enabling transmission and reception of real-time frames, transmission of specific weights, entire system integration
-
-**Week 10: Final Presentation**
-
-**Subject to change based on the developments in work
-
-<a href="#table">Back to Table of Contents</a>
-
-
 ## Results and Evaluation
 
-This section would be updated soon
+
 
 <a href="#table">Back to Table of Contents</a>
 
 ## Limitations
 
-* MobileNet takes a very long time to train (~8 hours)
+* MobileNet takes some time to train
 * Currently this project only evaluates how a heavy model improves a lightweight model, all at the same end
 * With our specific aim, time constraint and the availability of models, implementation on Arduino is difficult
 
@@ -249,7 +226,8 @@ This section would be updated soon
 
 ## Conclusion
 
-This section would be updated soon
+* MobileNet V2 and Tiny-YOLO were used
+* While MobileNet doesn't perform badly, Tiny YOLO shows improvement in accuracy so that is the better model choice
 
 <a href="#table">Back to Table of Contents</a>
 
@@ -263,6 +241,31 @@ This section would be updated soon
 * Implement YOLO vPP on the server side
 
 <a href="#table">Back to Table of Contents</a>
+
+## Instructions for Usage
+
+#### Pre-trained Model
+
+It's important to follow the steps properly in these tutorials, yet there may be some sources of error. For that, you may refer to the document Training_Instructions in the github. It has the steps as well as some Notes, Possible sources of error and the ways to mitigate them. The possible sources of error and the ways to mitigate them have always been given below.
+
+Follow the steps in [7]. [7] details steps for MobileNet V1. For implementing V2, just replace the file with the MV2_folder by placing it in a folder called tflite2. 
+
+The pre-trained model is basically a tflite or Tensorflow Lite file which is optimized in size. It’s about 15-25 MB, suitable for deployment purposes in Raspberry Pi [g].
+Clone the repo in [7] and add the MV2_folder
+
+#### Retraining
+
+For retraining, open the colab notebook which uses the source [b]. This basically loads the pre-trained weights of mobilenet V2 and adapts it for the specific frames or images.
+
+#### Steps
+
+Use the instructions given in -- to implement the pre-trained MobileNet V2 model as well as the retraining model 
+For the pre-trained model, open the python file -- from the command prompt to view the model’s baseline performance
+For the retraining model, use the -- google colab notebook to view the performance after retraining. The colab notebook has instructions for that.
+
+#### Splitting Videos to frames
+
+For this, you need to use the script given in the 
 
 ## Midterm Presentation
 
