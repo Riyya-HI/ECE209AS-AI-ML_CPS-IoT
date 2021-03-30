@@ -267,6 +267,12 @@ Lastly, in order to reduce the bandwidth requirements of sending model weights o
 
 We did not achieve any considerable boost in accuracy when using SSD-Mobilenet. 
 
+<p align="center">
+	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Images/Frame0.jpg" height="200", width="350"/>
+	<br/>
+	<strong>Pre-Trained MobileNet V2</strong>
+</p>
+
 For SSD-Mobilenet, training requires TFRecord files. These files are used for training which generate checkpoints that are of three types: meta, data and index. Meta has the meta data, index has string values and data has the weights. These have to be compiled to form a frozen graph. Then a model is created with this, converted to tflite and tested. But the thing here is, it adapts and retains knowledge only of objects in frame. So when a new object comes, it will require labels from YOLO for that to add to its existing domain of knowledge. So MobileNet 2 is very well capable of adapting to the scene, but then it also customizes to it. And the training process talked about over here shows that the process isn’t as simple as loading weights to the model and utilising that. All weights have to be used to create a frozen graph that leads to model creation. So even if we transmit checkpoints, edge site would require not training but some computation. In that sense, Raspberry Pi is somewhat capable but that increases the overhead. 
 
 
