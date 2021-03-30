@@ -311,9 +311,11 @@ Clone the repo in [7] and add the MV2_folder
 
 The pretrained model has been adapted from [7] and the model V2 has been taken from [17].
 
+Please refer to Pretrained_V2_Inst doc in our repo.
+
 #### Retraining
 
-For retraining, open the colab notebook which uses the source [b]. This basically loads the pre-trained weights of mobilenet V2 and adapts it for the specific frames or images.
+For retraining, open the colab notebook which uses the source [11] and [12]. This basically loads the pre-trained weights of mobilenet V2 and adapts it for the specific frames or images. Please refer to Retrained_V2_Inst doc file in our repo.
 
 #### Steps
 
