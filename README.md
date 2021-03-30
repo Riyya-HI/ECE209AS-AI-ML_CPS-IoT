@@ -59,6 +59,10 @@ This can be taken care of by GPUs (General Processing Units) that can not only a
 MCUs or Microcontroller Units are ubiquitous systems that find application from military to healthcare and general-purpose systems. They're efficient and low-cost too. The disadvantage that sets back the implementtaion of object detection by means of MCUs is the limited memory available on-board for microcontrollers.
 -->
 
+**Performance Metrics**
+
+The mean average precision (mAP) and intersection over union (IoU) were calculated to compare different models. The average precision is the area under the precision-recall curve for a particular class. mAP is the average of this over all classes. IoU is defined by (intersection of predicted and truth bounding box)/(union of predicted and truth bounding box).
+
 <a href="#table">Back to Table of Contents</a>
 
 ## Related Work
