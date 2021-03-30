@@ -274,7 +274,7 @@ We did not achieve any considerable boost in accuracy when using SSD-Mobilenet.
 </p>
 
 <p align="center">
-	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Images/Retrained_V2_1.jpg" height="200", width="350"/>
+	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/Pages/Images/Retrained_V2_1.jpg" height="200", width="350"/>
 	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Images/Retrained_V2_2.jpg" height="200", width="350"/>
 	<br/>
 	<strong>MobileNet V2 after retraining</strong>
