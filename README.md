@@ -61,7 +61,7 @@ While this implementation showed the promise of the general framework that they 
 ## Technical Approach
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Tech_Appr_1.jpg" height="400", width="750"/>
+	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Tech_Appr_1.jpg" height="400", width="750"/>
 	<br/>
 	<strong>Transfer of frames and weights between the models</strong>
 </p>
