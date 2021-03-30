@@ -194,32 +194,14 @@ Using a 20 second time window and a sampling rate of 5fps, a mAP of 20.69 and av
 
 In all experiments, the proposed system achieved better performance metrics than the baseline pre-trained model. There was only a slight improvement in performance metrics when going from 5 FPS to 20 FPS. Thus the small gain in accuracy achieved with using 20 FPS would likely not be worth the extra bandwidth requirements.
 
-<p align="center">
-	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/IOU.svg" height="400", width="750"/>
-	<br/>
-	<strong>IoU or Intersection over Union</strong>
-</p>
 
+![Foley table](IOU.svg)
 
-<p align="center">
-	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/IOUvsTime.svg" height="400", width="750"/>
-	<br/>
-	<strong>IoU vs Time Graphs</strong>
-</p>
+![Foley table](IOUvsTime.svg)
 
+![Foley table](MAP.svg)
 
-<p align="center">
-	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/MAP.svg" height="400", width="750"/>
-	<br/>
-	<strong>mAP or Mean Average Precision</strong>
-</p>
-
-
-<p align="center">
-	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/MAPvsTime.svg" height="400", width="750"/>
-	<br/>
-	<strong>mAP vs time Graph</strong>
-</p>
+![Foley table](MAPvsTime.svg)
 
 
 Lastly, in order to reduce the bandwidth requirements of sending model weights over the communication link, an experiment was conducted that stopped backpropogation early in the Tiny-Yolo model when training. This means that only a small subset of the weights would be updated in the later layers of the model. Using this technique, we were not able to achieve noticeable improvements to performance. It is possible that this is due the hyperparameter choice when training. 
@@ -229,18 +211,9 @@ Lastly, in order to reduce the bandwidth requirements of sending model weights o
 
 We did not achieve any considerable boost in accuracy when using SSD-Mobilenet. 
 
-<p align="center">
-	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Images/0-10-Im-Base.jpg" height="200", width="350"/>
-	<br/>
-	<strong>Pre-Trained MobileNet V2</strong>
-</p>
+![Foley table](Images/Retrained_V2_1.jpg)
 
-<p align="center">
-	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Images/Retrained_V2_1.jpg" height="200", width="350"/>
-	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Images/Retrained_V2_2.jpg" height="200", width="350"/>
-	<br/>
-	<strong>MobileNet V2 after retraining</strong>
-</p>
+![Foley table](Images/Retrained_V2_2.jpg)
 
 For SSD-Mobilenet, training requires TFRecord files. These files are used for training which generate checkpoints that are of three types: meta, data and index. Meta has the meta data, index has string values and data has the weights. These have to be compiled to form a frozen graph. Then a model is created with this, converted to tflite and tested. But the thing here is, it adapts and retains knowledge only of objects in frame. So when a new object comes, it will require labels from YOLO for that to add to its existing domain of knowledge. So MobileNet 2 is very well capable of adapting to the scene, but then it also customizes to it. And the training process talked about over here shows that the process isn’t as simple as loading weights to the model and utilising that. All weights have to be used to create a frozen graph that leads to model creation. So even if we transmit checkpoints, edge site would require not training but some computation. In that sense, Raspberry Pi is somewhat capable but that increases the overhead. 
 
