@@ -107,7 +107,7 @@ The idea is to have one main model (Heavy Model) at the server end that could he
 ## Technical Approach
 
 <p align="center">
-	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Tech_Appr_1.jpg" height="400", width="750"/>
+	<img src="https://github.io/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Tech_Appr_1.jpg" height="400", width="750"/>
 	<br/>
 	<strong>Transfer of frames and weights between the models</strong>
 </p>
