@@ -17,19 +17,16 @@ For our project website, please visit: https://riyya-hi.github.io/ECE209AS-AI-ML
 ## Table of Contents
 * [Introduction](#introduction)
 * [Related Work](#related-work)
-* [Project Proposal](#project-proposal)
-* [Motivation](#motivation)
 * [Deliverables](#deliverables)
 * [Technical Approach](#technical-approach)
 * [Literature Survey](#literature-survey)
-* [Timeline for the Project](#timeline-for-the-project)
 * [Results and Evaluations](#results-and-evaluations)
 * [Limitations](#limitations)
 * [Conclusion](#conclusion)
 * [Future Work](#future-work)
+* [Instructions for Usage](#instructions-for-usage)
 * [Midterm Presentation](#midterm-presentation)
 * [Final Presentation](#final-presentation)
-* [Demonstration](#demonstration)
 * [References](#references)
 * [Common Errors and Fixes](#common-errors-and-fixes)
 
@@ -350,6 +347,8 @@ To analyze the lightweight model's (before and after) performance, we shot video
 6. Test the lightweight model's performance on a frame from 10-20 seconds after it gets retrained. This is your improved performance.
 7. This new performance then becomes your new baseline and a frame from the next segment, i.e. 20-30 seconds becomes your next test image.
 8. Repeat steps 3-7 for a few contiguous video segments.
+
+<a href="#table">Back to Table of Contents</a>
 
 ## Midterm Presentation
 
