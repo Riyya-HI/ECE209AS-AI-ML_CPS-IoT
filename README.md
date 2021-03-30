@@ -81,39 +81,43 @@ Training phase- Using the labels generated in the inference phase, the copy of t
 
 Once the lightweight model has finished training, the server will send the new weights back to the edge. 
 
-
-
 ## Deliverables
 
-* Working system simulated on cpu
-* Analysis of accuracy improvements
-* Analysis of bandwidth requirements
-* Analysis of bandwidth accuracy tradeoffs
-* Memory footprint analysis
+In terms of specific deliverables, this project will (1) get a working simulation on a local pc of the edge-server object detection system. This will allow us to (2) obtain performance metrics that will be analyzed in regards to the change in accuracy of the simulated system when compared to a standard lightweight model implementation. Then, we will (3) explore the accuracy improvements as a function of the bandwidth requirements of the system (change the rate at which we send frames to the server, and the number of weights we send back to the lightweight model). 
+
+This system is designed to be real-time. The simulation created on the local pc is not real-time, but the accuracy statistics generated will be the same as those generated in a true implementation of the system.
+
+
+### “Gold Standard” Model
+
+The “Gold Standard” model resides on the server side. This model should be the best performing model available, as it will be generating the “truth” values for incoming frames. This requirement necessitates a complex, deep object detection/classification as the choice for the “Gold Standard” model.
+
+For this project, we are using YOLOV4 as the Gold Standard Model. This is a state-of-the-art deep learning model used for object detection/classification. For the simulation, we pulled in the YOLOv4 Tensorflow implementation from the AlexeyAB Github repo (cite here). It obtains a mAP of 57.9% on the COCO dataset. The source code was altered to suit the needs of this system.
+
+The YOLOv4 object detection/classification network uses a single neural network applied to the full image. This network divides the image into regions and predicts bounding boxes and probabilities of the different classes for each region. These bounding boxes are weighted by the predicted probabilities.
+
+What makes the third version or V4 stand out is that it uses a few tricks to improve training and increase performance, including: multi-scale predictions, a better backbone classifier, and more as discussed in [4].
 
 <a href="#table">Back to Table of Contents</a>
 
-## Technical Approach
+### Lightweight Model
 
-<p align="center">
-	<img src="https://github.com/Riyya-HI/ECE209AS-AI-ML_CPS-IoT/blob/main/Tech_Appr_1.jpg" height="400", width="750"/>
-	<br/>
-	<strong>Transfer of frames and weights between the models</strong>
-</p>
+It is important that this lightweight model is suitable for edge devices that do not contain parallel computing resources and copious memory. Many state-of-the-art machine learning  models, especially the deep learning ones, consume GBs and even TBs amount of memory. Devices like a smartphone cannot handle this memory capacity (let alone something as resource-constrained as an MCU). That's why it's important to optimize the model to have a small memory footprint and low inference time.
 
-**EDGE side**
+For this reason, we decided to implement our system with two different lightweight models- SSD Mobilenet and Tiny-yolo. 
 
-Perform inference using lightweight model&nbsp;
+**MobileNet V2**
 
-Sample frames to send to server&nbsp;
+MobileNet V2 is a popular deep-learning model based on an inverted residual structure where the shortcut connections are between the thin bottleneck layers. The intermediate expansion layer uses lightweight depthwise convolutions to filter features as a source of non-linearity. [a]
 
-Update model with weights received from server
+It also uses SSD or Single-Shot Detector. What this means is that it would span through the image only once and then detects the object.
 
-**Server Side**
 
-**Inference Phase:** server receives new sample frames, runs the teacher model on them to obtain the labels and adds the frames, labels, and frame timestamps to a training data buffer, Beta
+**Tiny-YOLO**
 
-**Training Phase:** uses the labeled frames to train the “student” model that runs on the edge device.
+Tiny-YOLO is a lightweight version of the “Gold Standard” Yolo model.
+
+
 
 
 ### Heavy Model
