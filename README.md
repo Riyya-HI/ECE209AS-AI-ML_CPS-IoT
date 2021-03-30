@@ -222,27 +222,19 @@ For SSD-Mobilenet, training requires TFRecord files. These files are used for tr
 
 ## Limitations
 
-* MobileNet takes some time to train
-* Currently this project only evaluates how a gold standard model improves a lightweight model, all at the same end
-* With our specific aim, time constraint and the availability of models, implementation on Arduino is difficult
+An improvement in performance was seen when using Tiny-Yolo, but not SSD-Mobilenet. This is likely due to limitations of the applied training strategy. The improvements seen by Tiny-Yolo may not be significant enought to warrant the adoption of this system for object detection systems. 
 
 <a href="#table">Back to Table of Contents</a>
 
 ## Conclusion
 
-* MobileNet V2 and Tiny-YOLO were used
-* While MobileNet doesn't perform badly, Tiny YOLO shows improvement in accuracy so that is the better model choice
+In conclusion, a unique object detection system was implemented and evaluated in order to determine if the speed and accuracy of inference could be improved with limited bandwidth availabilities. A lightweight model on the edge was retrained based on a "gold standard model" residing on the server. Various different hyperparameters of the system were altered in order to achieve the best bandwidth accuracy tradeoff. 
 
 <a href="#table">Back to Table of Contents</a>
 
 ## Future Work
 
-* Actually implement lightweight model on edge device such as raspberry pi
-* Implement gold standard and lightweight copy model on actual server
-* Compare simulated results with real example
-* Use a smaller model on Raspberry Pi, something that may even train faster
-* Implement an IP stack to transfer weights and frames
-* Implement YOLO vPP on the server side
+Future work includes implementing the full system, rather than simulating it. This would allow a comparison of the results achieved in this experiment. Furthermore, fine-tuning the training strategy could yield better results. 
 
 <a href="#table">Back to Table of Contents</a>
 
